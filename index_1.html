@@ -1,0 +1,346 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Object models of Log Control</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!--
+    <link href="../../google-code-prettify/prettify.css" type="text/css" rel="stylesheet<!--" />
+    <script type="text/javascript" src="google-code-prettify/prettify.js"></script>-->
+</head>
+
+<body>
+<!-- header/navigation section -->
+<section class="navpart">
+    <header id="header">
+        <div class="navbar navbar-inverse navbar-fixed-top " id="menu">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+                <div class="navbar-collapse collapse move-me">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="home"><a href="../../index.html">HOME</a></li>
+                        <li class="models"><a href="../../models.html"><font color="#20B2AA">MODELS</font></a></li>
+                        <li class="contributors"><a href="../../contribute.html">CONTRIBUTE</a></li>
+                        <li class="aboutus"><a href="../../aboutUs.html">ABOUT US</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+</section>
+<!-- header/navigation section end -->
+
+<!-- multiple models section -->
+<section id="contact" class="section">
+    <div class="container">
+        <div id="mlist">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 conForm">
+                    <h4>Welcome to the ACTIVE Data Model Repository</h4>
+                    <h3>Reusable objects and object definitions are listed below</h3>
+                    <div class="ser">
+                        <i class="fa fa-search fa-1x" aria-hidden="true"></i>
+                        <input type="text" class="search" placeholder="Search model here by name, or keywords..."/>
+                    </div>
+                </div>
+            </div>
+
+
+            <ul class="list">
+                <li id="li-{{id}}" class="gt-template">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 conForm">
+
+                            <!-- panels for data models -->
+                            <div id="accordion-{{id}}" class="panel-group accordion" role="tablist" aria-multiselectable="true">
+
+
+                                <!-- LWM2M MODEL -->
+                                <div class="panel panel-default">
+
+                                    <div class="panel-heading gt-template" role="tab">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse"
+                                               data-parent="#accordion-{{id}}" href="#collapseOne-{{id}}" aria-expanded="false"
+                                               aria-controls="collapseOne">
+                                                <h4 class="name"><span>{{name}}</span></h4>
+                                                <p class="description">{{description}}</P>
+                                            </a>
+                                        </h4>
+                                    </div>
+
+                                    <div id="collapseOne-{{id}}" class="panel-collapse collapse " role="tabpanel"
+                                         aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            <div id="lwm2m{{id}}" class="body-content">
+                                                <!-- URN of the data model Lwm2m -->
+                                                <div  class="panel-headingl headingSOne gt-template" role="tab">
+                                                    <h4 class="panel-titlel">
+                                                        <a class="collapsed" role="button" data-toggle="collapse"
+                                                           data-parent="#collapseOne-{{id}}" href="#collapseTwo-{{id}}"
+                                                           aria-expanded="false" aria-controls="collapseSOne">
+                                                            <span>{{modelsLwm2m}}</span>
+                                                        </a>
+                                                    </h4>
+                                                </div>
+
+                                                <!-- more content of the data model -->
+                                                <div id="collapseTwo-{{id}}" class="panel-collapse collapse " role="tabpane1"
+                                                     aria-labelledby="headingtSOne">
+                                                    <div class="panel-body">
+
+                                                        <!-- description of data model -->
+                                                        <div class="body-content">
+                                                            <div class="panel-headings headingSOne gt-template" role="tab"  >
+                                                                <h4 class="panel-titles">
+                                                                    <a class="collapsed" role="button"
+                                                                       data-toggle="collapse"
+                                                                       data-parent="#collapseTwo-{{id}}" href="#collapseThree-{{id}}"
+                                                                       aria-expanded="false"
+                                                                       aria-controls="collapsesone">
+                                                                        Object version: <span>{{ObjectURN}}</span>
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+
+                                                            <div id="collapseThree-{{id}}" class="panel-collapse collapse"
+                                                                 role="tabpane1" aria-labelledby="headingtsone">
+                                                                <div class="panel-body">
+                                                                    <!-- description of data model -->
+                                                                    <div class="body-content">
+                                                                        <div class="panel-headings headingsone" role="tab">
+                                                                            <h4 class="panel-titles">
+                                                                                <a class="collapsed" role="button"
+                                                                                   data-toggle="collapse"
+                                                                                   data-parent="#collapseTwo-{{id}}"
+                                                                                   href="#collapseFour-{{id}}"
+                                                                                   aria-expanded="false"
+                                                                                   aria-controls="collapsessone">
+                                                                                    Description
+                                                                                </a>
+                                                                            </h4>
+                                                                        </div>
+                                                                        <div id="collapseFour-{{id}}"
+                                                                             class="panel-collapse collapse"
+                                                                             role="tabpanel"
+                                                                             aria-labelledby="headingtsone">
+                                                                            <div class="panel-bodys gt-template"
+                                                                                 style="word-break:break-all;">
+                                                                                <span>{{Description1}}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="body-content">
+                                                                        <div class="panel-headings" role="tab"
+                                                                             id="headingstwo">
+                                                                            <h4 class="panel-titles">
+                                                                                <a class="collapsed" role="button"
+                                                                                   data-toggle="collapse"
+                                                                                   data-parent="#collapseTwo-{{id}}"
+                                                                                   href="#collapseFive-{{id}}"
+                                                                                   aria-expanded="false"
+                                                                                   aria-controls="collapsesstwo">
+                                                                                    Resource Fields
+                                                                                </a>
+                                                                            </h4>
+                                                                        </div>
+                                                                        <div id="collapseFive-{{id}}"
+                                                                             class="panel-collapse collapse"
+                                                                             role="tabpanel"
+                                                                             aria-labelledby="headingtstwo">
+                                                                            <div class="panel-bodys gt-template"
+                                                                                 style="word-break:break-all;">
+                                                                                {{interTable}}
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div id="exampleusPanel{{id}}" class="body-content">
+                                                                        <div class="panel-headings" role="tab"
+                                                                             id="headingsthree">
+                                                                            <h4 class="panel-titles">
+                                                                                <a class="collapsed" role="button"
+                                                                                   data-toggle="collapse"
+                                                                                   data-parent="#collapseTwo-{{id}}"
+                                                                                   href="#collapseSix-{{id}}"
+                                                                                   aria-expanded="false"
+                                                                                   aria-controls="collapsessthree">
+                                                                                    Example usage
+                                                                                </a>
+                                                                            </h4>
+                                                                        </div>
+                                                                        <div id="collapseSix-{{id}}"
+                                                                             class="panel-collapse collapse"
+                                                                             role="tabpanel"
+                                                                             aria-labelledby="headingtsthree">
+                                                                            <div class="panel-bodys gt-template"
+                                                                                 style="word-break:break-all;">
+                                                                                <span>{{exampleus}}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="body-content">
+                                                                        <div class="panel-headings" role="tab"
+                                                                             id="headingstfour">
+                                                                            <h4 class="panel-titles">
+                                                                                <a class="collapsed" role="button"
+                                                                                   data-toggle="collapse"
+                                                                                   data-parent="#collapseTwo-{{id}}"
+                                                                                   href="#collapseSeve-{{id}}"
+                                                                                   aria-expanded="false"
+                                                                                   aria-controls="collapsessfour">
+                                                                                    xml
+                                                                                </a>
+                                                                                <button type="button" class="btn btn-primary" style="float: right; margin-top: -38px;" onclick="downLoadXML('{{id}}')">downLoad</button>
+                                                                            </h4>
+
+                                                                        </div>
+                                                                        <div id="collapseSeve-{{id}}"
+                                                                             class="panel-collapse collapse collapsessfour"
+                                                                             role="tabpanel"
+                                                                             aria-labelledby="headingtsfour">
+                                                                            <div class="panel-bodys gt-template">
+
+                                                                                <!--<pre class="prettyprint lang-xml"
+                                                                                     id="placeholder"></pre>-->
+                                                                                <span>{{interXML}}</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div id="jsonPanel{{id}}" class="body-content">
+                                                                        <div class="panel-headings" role="tab"
+                                                                             id="headingsfive">
+                                                                            <h4 class="panel-titles">
+                                                                                <a class="collapsed" role="button"
+                                                                                   data-toggle="collapse"
+                                                                                   data-parent="#collapseTwo-{{id}}"
+                                                                                   href="#collapseEight-{{id}}"
+                                                                                   aria-expanded="false"
+                                                                                   aria-controls="collapsessfive">
+                                                                                    json
+                                                                                </a>
+                                                                            </h4>
+                                                                        </div>
+                                                                        <div id="collapseEight-{{id}}"
+                                                                             class="panel-collapse collapse"
+                                                                             role="tabpanel"
+                                                                             aria-labelledby="headingtsfive">
+                                                                            <div class="panel-bodys gt-template">
+                                                                                <p id="json{{id}}">{{interJson}}</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div id="codePanel{{id}}" class="body-content">
+                                                                        <div class="panel-headings" role="tab"
+                                                                             id="headingssix">
+                                                                            <h4 class="panel-titles">
+                                                                                <a class="collapsed" role="button"
+                                                                                   data-toggle="collapse"
+                                                                                   data-parent="#collapseTwo-{{id}}"
+                                                                                   href="#collapseNigth-{{id}}"
+                                                                                   aria-expanded="false"
+                                                                                   aria-controls="collapsesssix">
+                                                                                    code
+                                                                                </a>
+                                                                            </h4>
+                                                                        </div>
+                                                                        <div id="collapseNigth-{{id}}"
+                                                                             class="panel-collapse collapse"
+                                                                             role="tabpanel"
+                                                                             aria-labelledby="headingtstsix">
+                                                                            <div class="panel-bodys gt-template"
+                                                                                 style="word-break:break-all;">
+                                                                                <span><a href="https://github.com/T4ACTIVE/T4ACTIVE.github.io/blob/master{{codeUrl}}" target="_blank">{{codeName}}</a></span><br/>
+                                                                                <span><a href="https://github.com/T4ACTIVE/T4ACTIVE.github.io/blob/master{{codeUrlH}}" target="_blank">{{codeNameH}}</a></span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="uci{{id}}" clas="body-content">
+                                                <!-- URN of the data model  UCI -->
+                                                <div  class="panel-headingl headingSOne gt-template" role="tab">
+                                                    <h4 class="panel-titlel">
+                                                        <a class="collapsed" role="button" data-toggle="collapse"
+                                                           data-parent="#collapseOne-{{id}}" href="#uciCollapse{{id}}"
+                                                           aria-expanded="false" aria-controls="collapseSOne">
+                                                            <span>{{modelsUCI}}</span>
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="uciCollapse{{id}}"
+                                                     class="panel-collapse collapse"
+                                                     role="tabpanel"
+                                                     aria-labelledby="headingtstsix">
+                                                    <div class="panel-bodys gt-template"
+                                                         style="word-break:break-all;">
+                                                        <span><a href="https://github.com/T4ACTIVE/T4ACTIVE.github.io/blob/master/{{UCICode}}" target="_blank">{{UCIName}}</a></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- LWM2M MODEL end -->
+                                </div>
+                                <!-- panels for data models end -->
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="pagination"></ul>
+        </div>
+    </div>
+</section>
+<!-- multiple models section end -->
+
+<!-- JS FILES -->
+<script type="text/javascript" src="libs/less/less.min.js"></script>
+<script type="text/javascript" src="libs/jquery/jquery.js"></script>
+<script type="text/javascript" src="libs/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="libs/jquery/jquery-migrate-1.2.1.js"></script>
+<script type="text/javascript" src="libs/bootstrap/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap/js/bootstrap-typeahead.min.js"></script>
+<script src="libs/bootstrap/js/bootstrap-slider.js"></script>
+<script type="text/javascript" src="libs/xml/ObjTree.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/list.js"></script>
+<script src="js/list.page.js"></script>
+<script src="jss/mainIn.js"></script>
+<script src="jss/main.js"></script>
+<script type="text/javascript">
+    var modellist = new List('mlist', {
+        valueNames: ['name', 'description'],
+        page: 7,
+        plugins: [ListPagination({})]
+    });
+</script>
+</body>
+</html>

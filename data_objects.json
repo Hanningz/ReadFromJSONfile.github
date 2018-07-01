@@ -1,0 +1,131 @@
+{
+  "objects": [
+    {
+      "id": 1,
+      "name": "Gateway System",
+      "description": "Gateway Application Object describing base system settings",
+      "models": [
+        "lwm2m",
+        "UCI"
+      ],
+      "url": "Model_List/Gateway_System/Gateway_System.xml",
+      "ifjson": "Model_List/Gateway_System/Gateway_System.json",
+      "exampleus": "The gateway system object contains the most basic functionalities for a gateway such as its name, timezone and so on. All properties are represented as readable and writable resources using standard LWM2M operations.",
+      "codeUrl":"/Model_List/Gateway_System/object_system.c",
+      "codeName": "object_system.c",
+      "UCICode":"Model_List/Gateway_System/object_system.c",
+      "UCIName":"object_system.c"
+    },
+    {
+      "id": 2,
+      "name": "Gateway Wireless Interface",
+      "description": "Gateway Application Object for representing wireless IP interfaces",
+      "models": [
+        "lwm2m",
+        "UCI"
+      ],
+      "url": "Model_List/Gateway_Wireless/Gateway_Wireless.xml",
+      "ifjson": "Model_List/Gateway_Wireless/Gateway_Wireless.json",
+      "exampleus": "The gateway wireless interface object contains the most basic functionalities for a configuration of a wireless nework interface of a gateway. Supported interface properties are manipulated as resources using standard LWM2M operations.",
+      "codeUrl":"/Model_List/Gateway_Wireless/object_wireless.c",
+      "codeName": "object_wireless.c",
+      "UCICode":"Model_List/Gateway_System/object_system.c",
+      "UCIName":"object_system.c"
+    },
+    {
+      "id": 3,
+      "name": "Gateway Fixed Interface",
+      "description": "Gateway Application Object for representing fixed IP interfaces",
+      "models": [
+        "lwm2m"
+      ],
+      "url": "Model_List/Gateway_Fixed/Gateway_Fixed.xml",
+      "ifjson": "Model_List/Gateway_Fixed/Gateway_Fixed.json",
+      "exampleus": "The gateway fixed interface object contains the most basic functionalities for a configuration of a fixed nework interface of a gateway. Supported interface properties are manipulated as resources using standard LWM2M operations.",
+      "codeUrl":"/Model_List/Gateway_Fixed/object_netif.c",
+      "codeName":  "object_netif.c"
+    },
+    {
+      "id": 4,
+      "name": "Log Control",
+      "description": "Controls the log handling for the sensor data",
+      "models": [
+        "lwm2m"
+      ],
+      "url": "Model_List/Log_Control/Log_Control_25011.xml",
+      "ifjson": "Model_List/Log_Control/Log_Control_25011.json",
+      "exampleus": "This object is used for controlling the EMM internal logging system using executable resources to start and stop the logging. Another resource is used for setting the log filename.",
+      "codeUrl":"/Model_List/Log_Control/log_control_object.c",
+      "codeUrlH":"/Model_List/Log_Control/log_control_object.h",
+      "codeName": "log_control_object.c",
+      "codeNameH":"log_control_object.h"
+    },
+    {
+      "id": 5,
+      "name": "EMM Integrator",
+      "description": "Object for defining the components of an Energy Measurement Module",
+      "models": [
+        "lwm2m"
+      ],
+      "url": "Model_List/EMM_Integrator/EMM_Integrator.xml",
+      "ifjson": "Model_List/EMM_Integrator/EMM_Integrator.json",
+      "exampleus": "The EMM Integrator Object creates a logical representation of the EMM using object links. The objects being linked are the Device Binding Object, Log Control and the IPSO Sensors.",
+      "codeUrl":"/Model_List/EMM_Integrator/emmi_object.c",
+      "codeUrlH":"/Model_List/EMM_Integrator/emmi_object.h",
+      "codeName": "emmi_object.c",
+      "codeNameH":"emmi_object.h"
+    },
+    {
+      "id": 6,
+      "name": "Device Binding",
+      "description": "Connects the EMM to the device it measures",
+      "models": [
+        "lwm2m"
+      ],
+      "url": "Model_List/DeviceBinding/DeviceBinding_25012.xml",
+      "ifjson": "Model_List/DeviceBinding/DeviceBinding_25012.json",
+      "exampleus": "The device binding object is used to identify which physical device the EMM is connected to and measuring. The resources include options to identify the device using name, ID (such as MAC or Serial) and/or location.",
+      "codeUrl":"/Model_List/DeviceBinding/device_binding_object.c",
+      "codeUrlH":"/Model_List/DeviceBinding/device_binding_object.h",
+      "codeName": "device_binding_object.c",
+      "codeNameH":"device_binding_object.h"
+
+    },
+    {
+      "id": 7,
+      "name": "BLE GATT Proxy",
+      "description": "Generic object mapping BLE services via low level operations over LWM2M. Each object represents a single BLE service",
+      "models": [
+        "lwm2m"
+      ],
+      "url": "Model_List/BLE_GATT_Proxy/BLE GATT Proxy.xml",
+      "ifjson": "",
+      "exampleus": "",
+      "codeUrl": ""
+    },
+    {
+      "id": 8,
+      "name": "PAN Interface",
+      "description": "Generic object for modelling endpoint or gateway PAN interfaces, such as Bluetooth, BLE and Zigbee",
+      "models": [
+        "lwm2m"
+      ],
+      "url": "Model_List/PAN_Interface/PAN Interface.xml",
+      "ifjson": "",
+      "exampleus": "",
+      "codeUrl": ""
+    },
+    {
+      "id": 9,
+      "name": "Native Operations",
+      "description": "Generic object that is one of several objects specified to provide the LWM2M server with hypermedia-like operations on the gateway",
+      "models": [
+        "lwm2m"
+      ],
+      "url": "Model_List/Native_Operations/Native Operations.xml",
+      "ifjson": "",
+      "exampleus": "",
+      "codeUrl": ""
+    }
+  ]
+}
