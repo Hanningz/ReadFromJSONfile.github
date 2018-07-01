@@ -317,56 +317,6 @@ ul li {
 
 }
 
-.notice {
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 15px;
-        height: 100%;
-   	width: 100%;
-   	border:1px solid #f7f7f7;
-   	border-left: 6px solid #A9A9A9;
-   	margin-bottom: 10px;
-   	border-radius: 2px;
-	background-color: #ffffff;
-	
-    -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
-       -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
-            box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
-}
-
-.notice-lg {
-    	text-align:left;
-    	padding-left: 18px;
-    	font-size: large;
-    	padding-bottom: 5px;
-}
-
-.notice-lg .name { 
-    	color: #009FCC;
-    	font-size: 18px;
-	margin-bottom: 5px;
-	text-align: left;
-	font-weight: bold;
-	
-}
-
-.notice-lg .id { 
-    	color: #009FCC;
-   	font-size: 16px;
-	margin-bottom: 5px;
-	text-align: left;
-	font-weight: bold;	
-}
-
-.notice-lg>p {
-    	color: gray;
-	font-size: 20px;		
-}
-
-.notice:hover {
-    	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	border-left: 6px solid #20B2AA;	
-}
 
 .contr p{
 	color: #787878;
@@ -551,34 +501,19 @@ a:hover,a:focus{
 
 .accordion .panel{
  	box-shadow: none;
- 	border: 1px solid #f7f7f7;
- 	margin-bottom: 10px;
+	border:2px solid #f7f7f7;
+	border-left: 5px solid #BEBEBE;
+ 	margin-bottom: 5px;
  	margin-left: auto;
  	margin-right: auto;
- 	width:100%;
-}
- 
-.accordion .panels{
- 	margin-left: auto;
- 	margin-right: auto;
- 	width:100%;
- 	padding: 0;
- 	border-left: 3px solid #009FCC;
- 	background-color: #fff;
-	border-radius: 5;
- 	margin-bottom: 10px;
- 
- -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
-       -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
-            box-shadow: 0 5px 8px -6px rgba(0,0,0,.2); 
-}
- 
-.accordion .panel:hover {
-    	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	border-radius: 2px;
+ 	width:80%;
+	text-align:left;
 }
 
-.accordion .panels:hover {
-    	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.accordion .panel:hover {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
 }
 
 .accordion .panel-heading:hover {
@@ -614,7 +549,7 @@ a:hover,a:focus{
  	border-radius: 5;
  	text-align: center;
  	background-color: #fff;
- 	border-left: 6px solid #7f7f84; 
+ 	border-left: 6px solid #20B2AA;
  
   -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
        -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
@@ -627,7 +562,6 @@ a:hover,a:focus{
  	border-radius: 5;
  	text-align: center;
  	background-color: #fff;
- 	border-left: 6px solid #20B2AA; 
 
   -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
        -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
@@ -637,7 +571,7 @@ a:hover,a:focus{
 .accordion .panel-headings{
  	padding-bottom: 0;
  	border-radius: 5;
- 	border-left: 3px solid #009FCC;
+ 	border-left: 3px solid #40E0D0;
  	background-color: #fff;
  	border-radius: 5;
  	margin-bottom: 10px;
@@ -676,10 +610,24 @@ a:hover,a:focus{
             box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
 }
 
+.accordion .panel-headingU{
+	padding: 0;
+	border-radius: 5;
+	border-left: 3px solid gray;
+	background-color: #fff;
+	border-radius: 5;
+	margin-bottom: 10px;
+
+	-webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+	box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+}
+
+
 .accordion .panel-headingsb{
  	padding: 0;
  	border-radius: 5;
- 	border-left: 3px solid #40E0D0;
+ 	border-left: 3px solid #9fefe7;
  	background-color: #fff;
  	border-radius: 5;
  	margin-bottom: 10px;
@@ -708,7 +656,7 @@ a:hover,a:focus{
 .accordion .panel-title a{
 	text-decoration : none;
  	display: block;
- 	padding: 32px;
+ 	padding: 20px;
  	font-size: 18px;
  	font-weight: bold;
 	text-align: left;
@@ -729,17 +677,6 @@ a:hover,a:focus{
  	transition: all 0.5s ease 0s;
 }
 
-.accordion .panel-titled {
- 	display: block;
- 	padding: 14px;
- 	padding-top: 22px;
- 	font-size: 15px;
- 	font-weight: bold;
- 	text-align: left;
- 	background-color: #fff;
- 	color:gray;
- 	transition: all 0.5s ease 0s;
-}
 
 .accordion .panel-titlesb a{
 	text-decoration : none;
