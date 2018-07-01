@@ -138,7 +138,7 @@
       "codeUrl": ""
     },
     {
-      "id": 12,
+      "id": 11,
       "name": "BLE Commands",
       "description": "The BLE (Bluetooth Low Energy) Commands Object allows LWM2M to issue system level BLE operations via a bluetooth interface on a gateway or device",
       "models": [
