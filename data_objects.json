@@ -13,7 +13,6 @@
       "exampleus": "The gateway system object contains the most basic functionalities for a gateway such as its name, timezone and so on. All properties are represented as readable and writable resources using standard LWM2M operations.",
       "codeUrl":"/Model_List/Gateway_System/object_system.c",
       "codeName": "object_system.c",
-      "UCICode":"Model_List/Gateway_System/object_system.c",
       "UCIName":"object_system.c"
     },
     {
@@ -29,7 +28,6 @@
       "exampleus": "The gateway wireless interface object contains the most basic functionalities for a configuration of a wireless nework interface of a gateway. Supported interface properties are manipulated as resources using standard LWM2M operations.",
       "codeUrl":"/Model_List/Gateway_Wireless/object_wireless.c",
       "codeName": "object_wireless.c",
-      "UCICode":"Model_List/Gateway_System/object_system.c",
       "UCIName":"object_system.c"
     },
     {
