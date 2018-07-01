@@ -124,6 +124,30 @@
       "ifjson": "",
       "exampleus": "",
       "codeUrl": ""
+    },
+     {
+      "id": 10,
+      "name": "UCI Commands",
+      "description": "The UCI (Unified Configuration Interface) Object allows LWM2M to issue system level calls to OpenWRT's UCI configuration system.",
+      "models": [
+        "lwm2m"
+      ],
+      "url": "Model_List/UCI_Commands/UCI Commands.xml",
+      "ifjson": "",
+      "exampleus": "",
+      "codeUrl": ""
+    },
+    {
+      "id": 12,
+      "name": "BLE Commands",
+      "description": "The BLE (Bluetooth Low Energy) Commands Object allows LWM2M to issue system level BLE operations via a bluetooth interface on a gateway or device",
+      "models": [
+        "lwm2m"
+      ],
+      "url": "Model_List/BLE_Commands/BLE Commands.xml",
+      "ifjson": "",
+      "exampleus": "",
+      "codeUrl": ""
     }
   ]
 }
