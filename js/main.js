@@ -31,7 +31,6 @@ var $main = [[
 
 function downLoadXML(idStr){
 
-
     var pathName = document.location.pathname;
     var index = pathName.indexOf("index.html");
     var result = pathName.substr(0,index);
@@ -54,7 +53,6 @@ function downLoadXML(idStr){
 }
 
 function downLoadJSON(idStr){
-
 
     var pathName = document.location.pathname;
     var index = pathName.indexOf("index.html");
