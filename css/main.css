@@ -65,17 +65,17 @@ h5 {
 .btn-xs {
 	background-color: transparent;
 	border: 1px solid #e6e6e6;
-	color: #8a8a8a;
+	color: #00CED1;
 	border-radius: 3px;
 	font-weight: bold;
-	font-size: 10px;
+	font-size: 9px;
 	margin-left: 20px;
 }
 
-.btn-xs:hover, .btn-xs:focus {
-	background-color: #515151;
-	color: #fff;
+.btn-xs:hover, .btn:focus {
+    background-color: transparent;
 }
+
 
 .btn-large:hover{
 	background-color: #75d5b2;
@@ -501,18 +501,23 @@ a:hover,a:focus{
 
 .accordion .panel{
  	box-shadow: none;
-	border:2px solid #f7f7f7;
-	border-left: 5px solid #BEBEBE;
+	border:1px solid #f7f7f7;
+    border-left: 4px solid #ededed;
  	margin-bottom: 5px;
  	margin-left: auto;
  	margin-right: auto;
 	border-radius: 2px;
- 	width:80%;
+ 	width:72%;
 	text-align:left;
+    padding-top: 2px;
+
 }
+
 
 .accordion .panel:hover {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+
 
 }
 
@@ -550,10 +555,10 @@ a:hover,a:focus{
  	text-align: center;
  	background-color: #fff;
  	border-left: 6px solid #20B2AA;
- 
+
   -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
        -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
-            box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);			
+            box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
 }
 
 .accordion .panel-heading{
@@ -571,7 +576,7 @@ a:hover,a:focus{
 .accordion .panel-headings{
  	padding-bottom: 0;
  	border-radius: 5;
- 	border-left: 3px solid #40E0D0;
+ 	border-left: 3px solid #009FCC;
  	background-color: #fff;
  	border-radius: 5;
  	margin-bottom: 10px;
@@ -600,8 +605,8 @@ a:hover,a:focus{
 .accordion .panel-headingl{
  	padding: 0;
  	border-radius: 5;
- 	border-left: 3px solid #009FCC;
- 	background-color: #fff;
+ 	border-left: 4px solid #20B2AA;
+    background-color: #fff;
  	border-radius: 5;
  	margin-bottom: 10px;
  
@@ -613,7 +618,7 @@ a:hover,a:focus{
 .accordion .panel-headingU{
 	padding: 0;
 	border-radius: 5;
-	border-left: 3px solid gray;
+	border-left: 4px solid #969696;
 	background-color: #fff;
 	border-radius: 5;
 	margin-bottom: 10px;
@@ -627,10 +632,11 @@ a:hover,a:focus{
 .accordion .panel-headingsb{
  	padding: 0;
  	border-radius: 5;
- 	border-left: 3px solid #9fefe7;
+ 	border-left: 3px solid #66c5e0;
  	background-color: #fff;
  	border-radius: 5;
  	margin-bottom: 10px;
+
  
  -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
        -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
@@ -654,7 +660,7 @@ a:hover,a:focus{
 }
 
 .accordion .panel-title a{
-	
+	text-decoration : none;
  	display: block;
  	padding: 20px;
  	font-size: 18px;
@@ -665,7 +671,7 @@ a:hover,a:focus{
 }
 
 .accordion .panel-titles a{
-	
+	text-decoration : none;
  	display: block;
  	padding: 14px;
  	padding-top: 20px;
@@ -691,7 +697,7 @@ a:hover,a:focus{
 }
 
 .accordion .panel-titlel a{
-	
+	text-decoration : none;
  	display: block;
 	padding: 26px;
  	font-size: 16px;
@@ -751,14 +757,20 @@ a:hover,a:focus{
 }
 
 table { 
-  	width: 100%; 
+  	width: 100%;
   	border-collapse: collapse; 
 }
 
 th { 
   	background: #808080; 
   	color: white; 
-  	font-weight: bold; 
+  	font-weight: bold;
+    font-size: 12px;
+}
+
+td {
+
+    font-size: 12px;
 }
 
 tr:nth-of-type(even) { 
