@@ -126,11 +126,11 @@ var $gtMap = [[
                             isExist[3] = false;
                             isExist[4] = false;
 
-                            IdExist[3] = "lwm2m" + dict.id;
+                            IdExist[3] = "LWM2M" + dict.id;
                             IdExist[4] = "uci" + dict.id;
                         }else if(modelsTemp.length === 1){
                             var temp = dict.models[0]
-                            if(temp === "lwm2m"){
+                            if(temp === "LWM2M"){
                                 dict["modelsLwm2m"] = temp;
                                 isExist[3] = true;
                                 isExist[4] = false;
@@ -142,7 +142,7 @@ var $gtMap = [[
                                 isExist[3] = false;
                                 isExist[4] = true;
 
-                                IdExist[3] = "lwm2m" + dict.id;
+                                IdExist[3] = "LWM2M" + dict.id;
                                 IdExist[4] = dict.id;
                             }
                         }else{
@@ -213,7 +213,7 @@ var $gtMap = [[
                         var resourcesArray = [];
                         resourcesArray = json1.Resources.Item;
                         var tempBody = new Array(resourcesArray.length+2);
-                        tempBody[0] = '<table class="table-responsive table table-bordered table-hover"><tr><th style="width: 10%;">Resource</th><th style="width: 4%;">ID</th><th style="width: 8%;">Access Type</th><th style="width: 14%;">MultipleInstances</th><th style="width: 12%;">Mandatory</th><th style="width: 8%;">Type</th><th style="width: 10%;">RangeEnumeration</th><th style="width: 6%;">Units</th><th style="width: 36%;">Description</th></tr>';
+                        tempBody[0] = '<table class="table-responsive table table-bordered table-hover"><tr><th style="width: 12%;">Resource</th><th style="width: 8%;">ID</th><th style="width: 8%;">Access Type</th><th style="width: 11%;">MultipleInstances</th><th style="width: 12%;">Mandatory</th><th style="width: 8%;">Type</th><th style="width: 11%;">RangeEnumeration</th><th style="width: 11%;">Units</th><th style="width: 36%;">Description</th></tr>';
                         tempBody[resourcesArray.length+2] = '</table>';
                         for(var i = 0 ; i < resourcesArray.length; i++){
 
