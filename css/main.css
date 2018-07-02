@@ -565,8 +565,7 @@ a:hover,a:focus{
  	border-radius: 5;
  	text-align: center;
  	background-color: #fff;
-    border-left: 6px solid #00CED1;
-
+    border-left: 6px solid gray;
 
   -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
        -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
@@ -765,12 +764,12 @@ th {
   	background: #808080; 
   	color: white; 
   	font-weight: bold;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 td {
 
-    font-size: 13px;
+    font-size: 12px;
 }
 
 tr:nth-of-type(even) { 
