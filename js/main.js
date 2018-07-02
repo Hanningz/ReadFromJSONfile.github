@@ -31,21 +31,18 @@ var $main = [[
 
 function downLoadXML(idStr){
 
+
     var pathName = document.location.pathname;
     var index = pathName.indexOf("index.html");
     var result = pathName.substr(0,index);
 
+
     var tempUrl = "";
     var configurationTemp = $main.initConfiguration.objects;
-  
-    
+
     configurationTemp.map(function (item) {
-        if(Number(idStr.substr(4, idStr.length-4)) === item.id){
-            if(idStr.substr(0,4) === "_xml"){
-                tempUrl = item.url;
-            }else{
-                tempUrl = item.ifjson;
-            }
+        if(Number(idStr) === item.id){
+            tempUrl = item.url;
         }
 
     });
@@ -56,9 +53,35 @@ function downLoadXML(idStr){
 
 }
 
+function downLoadJSON(idStr){
+
+
+    var pathName = document.location.pathname;
+    var index = pathName.indexOf("index.html");
+    var result = pathName.substr(0,index);
+
+
+    var tempUrl = "";
+    var configurationTemp = $main.initConfiguration.objects;
+
+    configurationTemp.map(function (item) {
+        if(Number(idStr) === item.id){
+            tempUrl = item.url;
+        }
+
+    });
+
+    var urlTemp = result + tempUrl;
+
+    downloadFile(urlTemp);
+
+}
+
+
+
 window.downloadFile = function (sUrl) {
 
-    
+
     if (/(iP)/g.test(navigator.userAgent)) {
         alert('Your device does not support files downloading. Please try again in desktop browser.');
         return false;
