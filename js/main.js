@@ -28,17 +28,18 @@ var $main = [[
     }).apply(null, arguments[0]);
 })[0];
 
-// 下载xml
+
 function downLoadXML(idStr){
 
-    // 获取项目主路径
+
     var pathName = document.location.pathname;
     var index = pathName.indexOf("index.html");
     var result = pathName.substr(0,index);
 
-    // 获取对应的文件路径
+
     var tempUrl = "";
     var configurationTemp = $main.initConfiguration.objects;
+
     configurationTemp.map(function (item) {
         if(Number(idStr) === item.id){
             tempUrl = item.url;
@@ -52,7 +53,34 @@ function downLoadXML(idStr){
 
 }
 
+function downLoadJSON(idStr){
+
+
+    var pathName = document.location.pathname;
+    var index = pathName.indexOf("index.html");
+    var result = pathName.substr(0,index);
+
+
+    var tempUrl = "";
+    var configurationTemp = $main.initConfiguration.objects;
+
+    configurationTemp.map(function (item) {
+        if(Number(idStr) === item.id){
+            tempUrl = item.url;
+        }
+
+    });
+
+    var urlTemp = result + tempUrl;
+
+    downloadFile(urlTemp);
+
+}
+
+
+
 window.downloadFile = function (sUrl) {
+
 
     if (/(iP)/g.test(navigator.userAgent)) {
         alert('Your device does not support files downloading. Please try again in desktop browser.');
