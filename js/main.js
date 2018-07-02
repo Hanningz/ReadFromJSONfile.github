@@ -31,16 +31,14 @@ var $main = [[
 
 function downLoadXML(idStr){
 
-
     var pathName = document.location.pathname;
     var index = pathName.indexOf("index.html");
     var result = pathName.substr(0,index);
 
-    // 获取对应的文件路径
     var tempUrl = "";
     var configurationTemp = $main.initConfiguration.objects;
   
-    // 解析idStr
+    
     configurationTemp.map(function (item) {
         if(Number(idStr.substr(4, idStr.length-4)) === item.id){
             if(idStr.substr(0,4) === "_xml"){
