@@ -33,20 +33,12 @@ function downLoadXML(idStr){
 
     // 获取项目主路径
     var pathName = document.location.pathname;
-    var index = pathName.indexOf("index_1.html");
+    var index = pathName.indexOf("index.html");
     var result = pathName.substr(0,index);
 
     // 获取对应的文件路径
     var tempUrl = "";
     var configurationTemp = $main.initConfiguration.objects;
-    /*
-    for(var i = 0; i < configurationTemp.length; i++){
-        if(Number(idStr) === configurationTemp[i].id){
-            tempUrl = configurationTemp[i].url;
-            break;
-        }
-    }
-     */
     configurationTemp.map(function (item) {
         if(Number(idStr) === item.id){
             tempUrl = item.url;
@@ -62,7 +54,6 @@ function downLoadXML(idStr){
 
 window.downloadFile = function (sUrl) {
 
-    // 考虑到ios
     if (/(iP)/g.test(navigator.userAgent)) {
         alert('Your device does not support files downloading. Please try again in desktop browser.');
         return false;
