@@ -43,7 +43,6 @@ h5 {
 	background-color: #3bc492;
 	color: #fff;
 	font-size: 15px;
-	font-weight: 600;
 	border: 0;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
@@ -64,16 +63,16 @@ h5 {
 
 .btn-xs {
 	background-color: transparent;
-	border: 1px solid #e6e6e6;
-	color: #00CED1;
+	color: #20B2AA;
 	border-radius: 3px;
-	font-weight: bold;
-	font-size: 9px;
 	margin-left: 20px;
+    margin-right: 16px;
 }
 
 .btn-xs:hover, .btn:focus {
     background-color: transparent;
+    color: gray;
+
 }
 
 
@@ -502,7 +501,7 @@ a:hover,a:focus{
 .accordion .panel{
  	box-shadow: none;
 	border:1px solid #f7f7f7;
-    border-left: 4px solid #ededed;
+
  	margin-bottom: 5px;
  	margin-left: auto;
  	margin-right: auto;
@@ -567,6 +566,8 @@ a:hover,a:focus{
  	border-radius: 5;
  	text-align: center;
  	background-color: #fff;
+    border-left: 6px solid #00CED1;
+
 
   -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
        -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
@@ -618,7 +619,7 @@ a:hover,a:focus{
 .accordion .panel-headingU{
 	padding: 0;
 	border-radius: 5;
-	border-left: 4px solid #969696;
+	border-left: 4px solid #a0a0a0;
 	background-color: #fff;
 	border-radius: 5;
 	margin-bottom: 10px;
