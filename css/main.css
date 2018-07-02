@@ -65,8 +65,8 @@ h5 {
 	background-color: transparent;
 	color: #20B2AA;
 	border-radius: 3px;
-	margin-left: 20px;
-    margin-right: 16px;
+	
+    margin-right: 10%;
 }
 
 .btn-xs:hover, .btn:focus {
