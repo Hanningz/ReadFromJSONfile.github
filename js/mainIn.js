@@ -21,7 +21,7 @@ var $gtMap = [[
             $utils: $utils,
             $services: $services
         };
-        
+
         function defineUtils() {
             Object.defineProperty(Array.prototype, "justFindOne", {
                 value: findElementBy,
@@ -36,10 +36,10 @@ var $gtMap = [[
             };
 
             /* ================================================================
-             *  pairOfArraysToDictionary        
-             *      (array                          
-             *      ,keyName                        
-             *      ,valueName)                     
+             *  pairOfArraysToDictionary
+             *      (array
+             *      ,keyName
+             *      ,valueName)
              * ================================================================ */
             function arrayToDictionary(array, keyName, valueName) {
                 var dictionary = {};
@@ -50,14 +50,14 @@ var $gtMap = [[
                 }
                 return dictionary;
             }
-            
+
             function pairOfArraysToDictionary(keys, values) {
                 var keyValuePairs = keys.map(function (key, i) {
                     return [key, values[i]];
                 });
                 return arrayToDictionary(keyValuePairs, 0, 1);
             }
-            
+
             function findElementBy(callback, array) {
                 var thisArray = array === undefined ? this : array;
                 var ret = null;
@@ -72,13 +72,13 @@ var $gtMap = [[
                 return ret;
             }
         }
-        
+
         function defineOOP() {
             var StringTemplateInterpreter = defineStringTemplateInterpreter();
             return {
                 StringTemplateInterpreter: StringTemplateInterpreter
             };
-            
+
             function defineStringTemplateInterpreter() {
                 StringTemplateInterpreter.prototype.interpret = interpret;
                 return StringTemplateInterpreter;
@@ -104,8 +104,8 @@ var $gtMap = [[
                 }
             }
         }
-        
-        
+
+
         function defineUI() {
 
             return {
@@ -120,7 +120,7 @@ var $gtMap = [[
                     var templateString = template.outerHTML;
                     dictionaries.forEach(function (dict) {
 
-                        
+
                         var modelsTemp = dict.models;
                         if(!modelsTemp || modelsTemp.length === 0){
                             isExist[3] = false;
@@ -157,20 +157,20 @@ var $gtMap = [[
 
                         }
 
-                        
+
                         var pathName = document.location.pathname;
                         var indexLast = pathName.lastIndexOf('/');
                         var result = pathName.substr(0,indexLast+1);
 
-                       
+
                         var xmlDoc = loadXML(result + dict.url);
                         var xotree = new XML.ObjTree();
                         var xmlToJson = xotree.parseXML(xmlDoc);
 
-                        
+
                         var json1 = $.extend(dict, xmlToJson.LWM2M.Object);
 
-                        
+
                         var xmlDoc2 = xmlDoc.replace(new RegExp("<","gmi"), "&lt;").replace(new RegExp(">","gmi"), '&gt;\n').replace(new RegExp('"',"gmi"),'&quot;').replace(new RegExp(/\n/g,"gmi"),'<br/>');
                         json1["interXML"] = xmlDoc2;
 
@@ -184,12 +184,12 @@ var $gtMap = [[
                             isExist[0] = true;
                             IdExist[0] = dict.id;
                         }else{
-                            
+
                             isExist[0] = false;
                             IdExist[0] = "jsonPanel" + dict.id;
                         }
 
-                       
+
                         var exampleus = dict.exampleus;
                         if(!exampleus){
                             isExist[1] = false;
@@ -199,7 +199,7 @@ var $gtMap = [[
                             IdExist[1] = dict.id;
                         }
 
-                       
+
                         var codeUrl = dict.codeUrl;
                         if(!codeUrl){
                             isExist[2] = false;
@@ -213,7 +213,7 @@ var $gtMap = [[
                         var resourcesArray = [];
                         resourcesArray = json1.Resources.Item;
                         var tempBody = new Array(resourcesArray.length+2);
-                        tempBody[0] = '<table class="table-responsive table table-bordered table-hover"><tr><th style="width: 10%;">Resource</th><th style="width: 3%;">ID</th><th style="width: 7%;">Access Type</th><th style="width: 8%;">MultipleInstances</th><th style="width: 10%;">Mandatory</th><th style="width: 6%;">Type</th><th style="width: 10%;">RangeEnumeration</th><th style="width: 9%;">Units</th><th style="width: 36%;">Description</th></tr>';
+                        tempBody[0] = '<table class="table-responsive table table-bordered table-hover"><tr><th style="width: 10%;">Resource</th><th style="width: 4%;">ID</th><th style="width: 8%;">Access Type</th><th style="width: 14%;">MultipleInstances</th><th style="width: 12%;">Mandatory</th><th style="width: 8%;">Type</th><th style="width: 10%;">RangeEnumeration</th><th style="width: 6%;">Units</th><th style="width: 36%;">Description</th></tr>';
                         tempBody[resourcesArray.length+2] = '</table>';
                         for(var i = 0 ; i < resourcesArray.length; i++){
 
@@ -226,7 +226,7 @@ var $gtMap = [[
 
                         $(interpreter.interpret(templateString, json1)).insertBefore(template);
 
-                        
+
                         for(var j = 0; j < isExist.length; j++){
                             if(!isExist[j]){
                                 document.getElementById(IdExist[j]).style.display = "none";
@@ -240,7 +240,7 @@ var $gtMap = [[
                 template$.remove();
             }
 
-            
+
             function loadXML(fileName) {
 
                 if (window.XMLHttpRequest)
@@ -257,7 +257,7 @@ var $gtMap = [[
 
             }
 
-            
+
             function loadJson(jsonUrl) {
                 var json = null;
                 try {
@@ -276,8 +276,8 @@ var $gtMap = [[
         }
 
         /* ================================================================
-         *  defineServices                    
-         *      getJsonOf                       
+         *  defineServices
+         *      getJsonOf
          * ================================================================ */
         function defineServices() {
             return {
