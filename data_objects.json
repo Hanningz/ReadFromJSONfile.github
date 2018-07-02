@@ -5,7 +5,7 @@
       "name": "Gateway System",
       "description": "Gateway Application Object describing base system settings",
       "models": [
-        "lwm2m",
+        "LWM2M",
         "UCI"
       ],
       "url": "Model_List/Gateway_System/Gateway_System.xml",
@@ -13,7 +13,7 @@
       "exampleus": "The gateway system object contains the most basic functionalities for a gateway such as its name, timezone and so on. All properties are represented as readable and writable resources using standard LWM2M operations.",
       "codeUrl":"/Model_List/Gateway_System/object_system.c",
       "codeName": "object_system.c",
-      "UCI":"Model_List/Gateway_System/UCIfile",
+      "UCICode":"Model_List/Gateway_System/UCIfile",
       "UCIName":"UCIfile"
     },
     {
@@ -21,7 +21,7 @@
       "name": "Gateway Wireless Interface",
       "description": "Gateway Application Object for representing wireless IP interfaces",
       "models": [
-        "lwm2m",
+        "LWM2M",
         "UCI"
       ],
       "url": "Model_List/Gateway_Wireless/Gateway_Wireless.xml",
@@ -29,7 +29,7 @@
       "exampleus": "The gateway wireless interface object contains the most basic functionalities for a configuration of a wireless nework interface of a gateway. Supported interface properties are manipulated as resources using standard LWM2M operations.",
       "codeUrl":"/Model_List/Gateway_Wireless/object_wireless.c",
       "codeName": "object_wireless.c",
-      "UCI":"Model_List/Gateway_Wireless/UCIfile",
+      "UCICode":"Model_List/Gateway_System/UCIfile",
       "UCIName":"UCIfile"
     },
     {
@@ -37,7 +37,7 @@
       "name": "Gateway Fixed Interface",
       "description": "Gateway Application Object for representing fixed IP interfaces",
       "models": [
-        "lwm2m"
+        "LWM2M"
       ],
       "url": "Model_List/Gateway_Fixed/Gateway_Fixed.xml",
       "ifjson": "Model_List/Gateway_Fixed/Gateway_Fixed.json",
@@ -50,7 +50,7 @@
       "name": "Log Control",
       "description": "Controls the log handling for the sensor data",
       "models": [
-        "lwm2m"
+        "LWM2M"
       ],
       "url": "Model_List/Log_Control/Log_Control_25011.xml",
       "ifjson": "Model_List/Log_Control/Log_Control_25011.json",
@@ -65,7 +65,7 @@
       "name": "EMM Integrator",
       "description": "Object for defining the components of an Energy Measurement Module",
       "models": [
-        "lwm2m"
+        "LWM2M"
       ],
       "url": "Model_List/EMM_Integrator/EMM_Integrator.xml",
       "ifjson": "Model_List/EMM_Integrator/EMM_Integrator.json",
@@ -80,7 +80,7 @@
       "name": "Device Binding",
       "description": "Connects the EMM to the device it measures",
       "models": [
-        "lwm2m"
+        "LWM2M"
       ],
       "url": "Model_List/DeviceBinding/DeviceBinding_25012.xml",
       "ifjson": "Model_List/DeviceBinding/DeviceBinding_25012.json",
@@ -96,7 +96,7 @@
       "name": "BLE GATT Proxy",
       "description": "Generic object mapping BLE services via low level operations over LWM2M. Each object represents a single BLE service",
       "models": [
-        "lwm2m"
+        "LWM2M"
       ],
       "url": "Model_List/BLE_GATT_Proxy/BLE GATT Proxy.xml",
       "ifjson": "",
@@ -108,7 +108,7 @@
       "name": "PAN Interface",
       "description": "Generic object for modelling endpoint or gateway PAN interfaces, such as Bluetooth, BLE and Zigbee",
       "models": [
-        "lwm2m"
+        "LWM2M"
       ],
       "url": "Model_List/PAN_Interface/PAN Interface.xml",
       "ifjson": "",
@@ -120,33 +120,9 @@
       "name": "Native Operations",
       "description": "Generic object that is one of several objects specified to provide the LWM2M server with hypermedia-like operations on the gateway",
       "models": [
-        "lwm2m"
+        "LWM2M"
       ],
       "url": "Model_List/Native_Operations/Native Operations.xml",
-      "ifjson": "",
-      "exampleus": "",
-      "codeUrl": ""
-    },
-     {
-      "id": 10,
-      "name": "UCI Commands",
-      "description": "The UCI (Unified Configuration Interface) Object allows LWM2M to issue system level calls to OpenWRT's UCI configuration system.",
-      "models": [
-        "lwm2m"
-      ],
-      "url": "Model_List/UCI_Commands/UCI Commands.xml",
-      "ifjson": "",
-      "exampleus": "",
-      "codeUrl": ""
-    },
-    {
-      "id": 11,
-      "name": "BLE Commands",
-      "description": "The BLE (Bluetooth Low Energy) Commands Object allows LWM2M to issue system level BLE operations via a bluetooth interface on a gateway or device",
-      "models": [
-        "lwm2m"
-      ],
-      "url": "Model_List/BLE_Commands/BLE Commands.xml",
       "ifjson": "",
       "exampleus": "",
       "codeUrl": ""
