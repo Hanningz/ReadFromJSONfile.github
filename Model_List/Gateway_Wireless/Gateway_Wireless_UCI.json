@@ -1,0 +1,52 @@
+{
+  "UCI": {
+      "URL": "file://localhost/etc/config/system",
+      "WifiIface": {
+		"Des": "The system section contains settings that apply to the most basic operation of the system.",
+        "OptionFields": [
+          {
+            "Name": "device",
+            "Type": "String",
+			"Required": "yes",
+			"Default": "(first device id)",
+            "Description": "Specifies the used wireless adapter."
+          },
+		  {
+            "Name": "mode",
+            "Type": "String",
+			"Required": "yes",
+			"Default": "ap",
+            "Description": "Selects the operation mode of the wireless interface."
+          },
+		  {
+            "Name": "disabled",
+            "Type": "boolean",
+			"Required": "no",
+			"Default": "0",
+            "Description": "When set to 1, wireless network is disabled."
+          },
+		  {
+            "Name": "ssid",
+            "Type": "String",
+			"Required": "yes",
+			"Default": "OpenWrt",
+            "Description": "The broadcasted SSID of the wireless network."
+          },
+		  {
+            "Name": "macaddr",
+            "Type": "MAC address",
+			"Required": "no",
+			"Default": "(hostapd/driver default)",
+            "Description": "Overrides the MAC address used for the wifi interface."
+          },
+		  {
+            "Name": "network",
+            "Type": "String",
+			"Required": "yes",
+			"Default": "lan",
+            "Description": "Specifies the network interface to attach the wireless to."
+          }
+        ]
+      }
+	}
+} 
