@@ -1,8 +1,16 @@
 ;
+/* ================================================================
+ *  浏览器调试用
+ * ================================================================ */
+var $debugging = $debugging ? $debugging : {};
+
 
 var xmlhttp;
-var isExist = new Array(5);
-var IdExist = new Array(5);
+// 0：表示ifjson值是否存在 1：表示exampleus是否存在 2：表示codeUrl是否存在 3表示LMWM2卡片是否存在
+// 4:表示UCI卡片是否存在 5：表示UCI卡片中当id=2是第三个模板应该隐藏
+var isExist = new Array(6);
+var IdExist = new Array(6);
+
 var $gtMap = [[
     window.SuperMap || null,
     window.jQuery || null
@@ -22,6 +30,11 @@ var $gtMap = [[
             $services: $services
         };
 
+        /* ================================================================
+         *  defineUtils                     // 返回工具项关，本模块只放无可以单独执行的函数，不放类
+         *      arrayToDictionary               // 将键值对数组转换为作为字典使用的对象
+         *      pairOfArraysToDictionary        // 将一对数组转换为作为字典使用的对象，第一个数组的元素作为键，第二个数组的元素作为值
+         * ================================================================ */
         function defineUtils() {
             Object.defineProperty(Array.prototype, "justFindOne", {
                 value: findElementBy,
@@ -36,10 +49,10 @@ var $gtMap = [[
             };
 
             /* ================================================================
-             *  pairOfArraysToDictionary
-             *      (array
-             *      ,keyName
-             *      ,valueName)
+             *  pairOfArraysToDictionary        // 将一对数组转换为作为字典使用的对象，返回作为字典的对象
+             *      (array                          // 输入数组，数组元素为表示键值对的对象
+             *      ,keyName                        // 输入数组的元素中表示键的属性名称
+             *      ,valueName)                     // 返回的对象的作为值的属性名称
              * ================================================================ */
             function arrayToDictionary(array, keyName, valueName) {
                 var dictionary = {};
@@ -51,6 +64,12 @@ var $gtMap = [[
                 return dictionary;
             }
 
+            /* ================================================================
+             *  pairOfArraysToDictionary        // 将一对数组转换为作为字典使用的对象，返回作为字典的对象
+             *      (keys                           // 作为键的数组
+             *      ,keyName                        // 返回的对象的作为键的属性名称
+             *      ,valueName)                     // 返回的对象的作为值的属性名称
+             * ================================================================ */
             function pairOfArraysToDictionary(keys, values) {
                 var keyValuePairs = keys.map(function (key, i) {
                     return [key, values[i]];
@@ -58,6 +77,12 @@ var $gtMap = [[
                 return arrayToDictionary(keyValuePairs, 0, 1);
             }
 
+            /* ================================================================
+             *  findElementBy                   // 返回数组中符合 callback 执行为 true 的第一个元素
+             *      this                            // 被查找的数组
+             *      (callback,
+             *      array)
+             * ================================================================ */
             function findElementBy(callback, array) {
                 var thisArray = array === undefined ? this : array;
                 var ret = null;
@@ -73,12 +98,29 @@ var $gtMap = [[
             }
         }
 
+        /* ================================================================
+         *  defineOOP                       // 返回面向对象相关
+         *      createClassBuilder              // 返回用来定义类的 builder
+         *      createDecoratorBuilder          // 返回用来装饰对象的 builder
+         *      ExclusiveActivitiesObserver     // 充当观察者的类，被观察对象的激活状态具有排他性
+         * ================================================================ */
         function defineOOP() {
             var StringTemplateInterpreter = defineStringTemplateInterpreter();
             return {
                 StringTemplateInterpreter: StringTemplateInterpreter
             };
 
+            /* ================================================================
+             *  defineStringTemplateInterpreter // 定义用来解释字符串模板解释器的类
+             * ================================================================
+             *  defineStringTemplateInterpreter() // 用来解释字符串模板解释器的类
+             *    this.                           // 实例层面
+             *      leftTag                         // 被替换部分的左标签
+             *      rightTag                        // 被替换部分的右标签
+             *    prototype.                      // 原型层面，
+             *      interpret                       // 执行解释
+             *          (stringTemplate, keyValueMap)
+             * ================================================================ */
             function defineStringTemplateInterpreter() {
                 StringTemplateInterpreter.prototype.interpret = interpret;
                 return StringTemplateInterpreter;
@@ -106,6 +148,10 @@ var $gtMap = [[
         }
 
 
+        /* ================================================================
+         *  defineUI                        // 返回界面相关，本模块只放无可以单独执行的函数，不放类
+         *      populateHtmlFrom                // 填充自定义 HTML 模板（常见的模板标志是 .gt-template）
+         * ================================================================ */
         function defineUI() {
 
             return {
@@ -120,13 +166,13 @@ var $gtMap = [[
                     var templateString = template.outerHTML;
                     dictionaries.forEach(function (dict) {
 
-
+                        // 判断models里面有几个值
                         var modelsTemp = dict.models;
                         if(!modelsTemp || modelsTemp.length === 0){
                             isExist[3] = false;
                             isExist[4] = false;
 
-                            IdExist[3] = "LWM2M" + dict.id;
+                            IdExist[3] = "lwm2m" + dict.id;
                             IdExist[4] = "uci" + dict.id;
                         }else if(modelsTemp.length === 1){
                             var temp = dict.models[0]
@@ -142,7 +188,7 @@ var $gtMap = [[
                                 isExist[3] = false;
                                 isExist[4] = true;
 
-                                IdExist[3] = "LWM2M" + dict.id;
+                                IdExist[3] = "lwm2m" + dict.id;
                                 IdExist[4] = dict.id;
                             }
                         }else{
@@ -157,20 +203,20 @@ var $gtMap = [[
 
                         }
 
-
+                        // 获取项目路径名
                         var pathName = document.location.pathname;
                         var indexLast = pathName.lastIndexOf('/');
                         var result = pathName.substr(0,indexLast+1);
 
-
+                        // 加载xml文件
                         var xmlDoc = loadXML(result + dict.url);
                         var xotree = new XML.ObjTree();
                         var xmlToJson = xotree.parseXML(xmlDoc);
 
-
+                        // 把dict和xmljson合并成一个json
                         var json1 = $.extend(dict, xmlToJson.LWM2M.Object);
 
-
+                        // 生成一个xml的json对象，便于插入页面中
                         var xmlDoc2 = xmlDoc.replace(new RegExp("<","gmi"), "&lt;").replace(new RegExp(">","gmi"), '&gt;\n').replace(new RegExp('"',"gmi"),'&quot;').replace(new RegExp(/\n/g,"gmi"),'<br/>');
                         json1["interXML"] = xmlDoc2;
 
@@ -184,12 +230,116 @@ var $gtMap = [[
                             isExist[0] = true;
                             IdExist[0] = dict.id;
                         }else{
-
+                            // json文件不存在
                             isExist[0] = false;
                             IdExist[0] = "jsonPanel" + dict.id;
                         }
 
+                        // 只有当有UCI的时候才会进行这个逻辑 2018-07-29新增
+                        // 初始化为false，默认不需要隐藏
+                        isExist[5] = true;
+                        IdExist[5] = dict.id;
+                        if(isExist[4]){
 
+                            // 判断UCIJson是否存在
+                            var uciJson = dict.UCIJson;
+                            if(!!uciJson){
+                                var tempJson = loadJson(result + uciJson);
+
+                                // 判断url是否存在
+                                var uciUrl = tempJson.UCI.URL;
+                                if(!!uciUrl){
+                                    json1["uciChildOneValue"] = uciUrl;
+                                }
+
+                                // 判断当id=1时，取System和Timeserver的值
+                                if(dict.id === 1){
+
+                                    json1["uciChildTwoKey"] = "System";
+                                    var uciSystemDes = tempJson.UCI.System.Des;
+                                    var uciSystemDesOne = "Option Fields";
+                                    var uciSysDes = [];
+                                    uciSysDes = tempJson.UCI.System.OptionFields;
+                                    var tempBody = new Array(uciSysDes.length+2);
+                                    tempBody[0] = '<table rules="all" style="border: 1px solid #adadad; font-size: 10px ; text-align-all: center;"><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
+                                    tempBody[uciSysDes.length+2] = '</table>';
+                                    for(var i = 0 ; i < uciSysDes.length; i++){
+
+                                        var item = uciSysDes[i];
+                                        var tempTR = "<tr><td>" + item.Name + "</td><td>" + item.Type + "</td><td>" + item.Required + "</td><td>" +item.Default  + "</td><td>" + item.Description + "</td></tr>" ;
+                                        tempBody[i+1] = tempTR;
+                                    }
+
+                                    var uciSystem = uciSystemDes + "<br><span style='font-weight: bold; color: blue;'>" + uciSystemDesOne + "</span><br><br>" +  tempBody.join('');
+                                    json1["uciChildTwoValue"] = uciSystem;
+
+                                    // Timeserver
+                                    json1["uciChildThreeKey"] = "Timeserver";
+                                    var uciTimeServerDes = tempJson.UCI.Timeserver.Des;
+                                    var uciTimeServerOne = "List Fields";
+                                    var uciTSOne =[];
+                                    uciTSOne = tempJson.UCI.Timeserver.ListFields;
+                                    var tempBodyuciTSOne = new Array(uciTSOne.length+2);
+                                    tempBodyuciTSOne[0] = '<table rules="all" style="border: 1px solid #adadad; font-size: 10px ; text-align-all: center;"><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
+                                    tempBodyuciTSOne[uciTSOne.length+2] = '</table>';
+                                    for(var i = 0 ; i < uciTSOne.length; i++){
+
+                                        var item = uciTSOne[i];
+                                        var tempTR = "<tr><td>" + item.Name + "</td><td>" + item.Type + "</td><td>" + item.Required + "</td><td>" +item.Default  + "</td><td>" + item.Description + "</td></tr>" ;
+                                        tempBodyuciTSOne[i+1] = tempTR;
+                                    }
+
+                                    var uciTimeServerTwo = "Option Fields";
+                                    var uciTSTwo =[];
+                                    uciTSTwo = tempJson.UCI.Timeserver.OptionFields;
+                                    var tempBodyuciTSTwo = new Array(uciTSTwo.length+2);
+                                    tempBodyuciTSTwo[0] = '<table rules="all" style="border: 1px solid #adadad; font-size: 10px ; text-align-all: center;"><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
+                                    tempBodyuciTSTwo[uciTSTwo.length+2] = '</table>';
+                                    for(var i = 0 ; i < uciTSTwo.length; i++){
+
+                                        var item = uciTSTwo[i];
+                                        var tempTR = "<tr><td>" + item.Name + "</td><td>" + item.Type + "</td><td>" + item.Required + "</td><td>" +item.Default  + "</td><td>" + item.Description + "</td></tr>" ;
+                                        tempBodyuciTSTwo[i+1] = tempTR;
+                                    }
+
+                                    var uciTimeServer = uciTimeServerDes + "<br><span style='font-weight: bold; color: blue;'>" + uciTimeServerOne + "</span><br><br>" +  tempBodyuciTSOne.join('') + "<br><br><span style='font-weight: bold; color: blue;'>" + uciTimeServerTwo + "</span><br><br>" + tempBodyuciTSTwo.join('') ;
+                                    json1["uciChildThreeValue"] = uciTimeServer;
+
+                                }
+
+                                // 判断当id=2时，取Wifi-iface的值
+                                if(dict.id === 2){
+                                    json1["uciChildTwoKey"] = "Wifi-iface";
+                                    var uciWifiIfaceDes = tempJson.UCI.WifiIface.Des;
+                                    var uciWifiIfaceDesOne = "Wifi-iface";
+                                    var uciWifiDes = [];
+                                    uciWifiDes = tempJson.UCI.WifiIface.OptionFields;
+                                    var tempBodyWifi = new Array(uciWifiDes.length+2);
+                                    tempBodyWifi[0] = '<table rules="all" style="border: 1px solid #adadad; font-size: 10px ; text-align-all: center;"><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
+                                    tempBodyWifi[uciWifiDes.length+2] = '</table>';
+                                    for(var i = 0 ; i < uciWifiDes.length; i++){
+
+                                        var item = uciWifiDes[i];
+                                        var tempTR = "<tr><td>" + item.Name + "</td><td>" + item.Type + "</td><td>" + item.Required + "</td><td>" +item.Default  + "</td><td>" + item.Description + "</td></tr>" ;
+                                        tempBodyWifi[i+1] = tempTR;
+                                    }
+
+                                    var uciWifitem = uciWifiIfaceDes + "<br><span style='font-weight: bold; color: blue;'>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
+                                    json1["uciChildTwoValue"] = uciWifitem;
+
+                                    var threeKeyUci = "uciChildThreeKey" + dict.id;
+
+                                    isExist[5] = false;
+                                    IdExist[5] = threeKeyUci;
+
+                                }
+
+                            }
+
+                        }
+
+
+                        // exampleus判断是否存在
                         var exampleus = dict.exampleus;
                         if(!exampleus){
                             isExist[1] = false;
@@ -199,7 +349,7 @@ var $gtMap = [[
                             IdExist[1] = dict.id;
                         }
 
-
+                        // codeUrl判断是否存在
                         var codeUrl = dict.codeUrl;
                         if(!codeUrl){
                             isExist[2] = false;
@@ -213,7 +363,7 @@ var $gtMap = [[
                         var resourcesArray = [];
                         resourcesArray = json1.Resources.Item;
                         var tempBody = new Array(resourcesArray.length+2);
-                        tempBody[0] = '<table class="table-responsive table table-bordered table-hover"><tr><th style="width: 12%;">Resource</th><th style="width: 8%;">ID</th><th style="width: 8%;">Access Type</th><th style="width: 11%;">MultipleInstances</th><th style="width: 12%;">Mandatory</th><th style="width: 8%;">Type</th><th style="width: 12%;">RangeEnumeration</th><th style="width: 12%;">Units</th><th style="width: 36%;">Description</th></tr>';
+                        tempBody[0] = '<table style="border: 1px solid royalblue; font-size: 10px ; text-align-all: center;"><tr><th style="width: 10%;">Resource</th><th style="width: 3%;">ID</th><th style="width: 7%;">Access Type</th><th style="width: 8%;">MultipleInstances</th><th style="width: 10%;">Mandatory</th><th style="width: 6%;">Type</th><th style="width: 10%;">RangeEnumeration</th><th style="width: 9%;">Units</th><th style="width: 36%;">Description</th></tr>';
                         tempBody[resourcesArray.length+2] = '</table>';
                         for(var i = 0 ; i < resourcesArray.length; i++){
 
@@ -226,7 +376,7 @@ var $gtMap = [[
 
                         $(interpreter.interpret(templateString, json1)).insertBefore(template);
 
-
+                        // 判断模板中值是否为空，为空则隐藏div
                         for(var j = 0; j < isExist.length; j++){
                             if(!isExist[j]){
                                 document.getElementById(IdExist[j]).style.display = "none";
@@ -240,7 +390,7 @@ var $gtMap = [[
                 template$.remove();
             }
 
-
+            //ajax方式读取xml
             function loadXML(fileName) {
 
                 if (window.XMLHttpRequest)
@@ -257,7 +407,7 @@ var $gtMap = [[
 
             }
 
-
+            // ajax方法读取json
             function loadJson(jsonUrl) {
                 var json = null;
                 try {
@@ -276,8 +426,8 @@ var $gtMap = [[
         }
 
         /* ================================================================
-         *  defineServices
-         *      getJsonOf
+         *  defineServices                    // 返回服务相关
+         *      getJsonOf                       // 根据 URL 获取 JSON
          * ================================================================ */
         function defineServices() {
             return {
