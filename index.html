@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <!--
+    <link href="../../google-code-prettify/prettify.css" type="text/css" rel="stylesheet<!--" />
+    <script type="text/javascript" src="google-code-prettify/prettify.js"></script>-->
 </head>
 
 <body>
@@ -30,10 +33,10 @@
                 </div>
                 <div class="navbar-collapse collapse move-me">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="home"><a href="index.html">HOME</a></li>
-                        <li class="models"><a href="models.html"><font color="#20B2AA">MODELS</font></a></li>
-                        <li class="contributors"><a href="contribute.html">CONTRIBUTE</a></li>
-                        <li class="aboutus"><a href="aboutUs.html">ABOUT US</a></li>
+                        <li class="home"><a href="../../index.html">HOME</a></li>
+                        <li class="models"><a href="../../models.html"><font color="#20B2AA">MODELS</font></a></li>
+                        <li class="contributors"><a href="../../contribute.html">CONTRIBUTE</a></li>
+                        <li class="aboutus"><a href="../../aboutUs.html">ABOUT US</a></li>
                     </ul>
                 </div>
             </div>
@@ -43,11 +46,10 @@
 <!-- header/navigation section end -->
 
 <!-- multiple models section -->
-<section id="contact" class="section" style="text-align:center;">
-
+<section id="contact" class="section">
     <div class="container">
         <div id="mlist">
-            <div class="row" >
+            <div class="row">
                 <div class="col-md-8 col-md-offset-2 conForm">
                     <h4>Welcome to the ACTIVE Data Model Repository</h4>
                     <h3>Reusable objects and object definitions are listed below</h3>
@@ -62,7 +64,7 @@
             <ul class="list">
                 <li id="li-{{id}}" class="gt-template">
                     <div class="row">
-                        <div class="col-md-12 conForm">
+                        <div class="col-md-8 col-md-offset-2 conForm">
 
                             <!-- panels for data models -->
                             <div id="accordion-{{id}}" class="panel-group accordion" role="tablist" aria-multiselectable="true">
@@ -76,8 +78,8 @@
                                             <a class="collapsed" role="button" data-toggle="collapse"
                                                data-parent="#accordion-{{id}}" href="#collapseOne-{{id}}" aria-expanded="false"
                                                aria-controls="collapseOne">
-                                                <h4 class="name" style="color:#009FCC; font-size: 18px; margin-bottom: 8px; text-align: left; font-weight: bold;"><span>{{name}}</span></h4>
-                                                <p class="description" style="color: gray; font-size: 16px;">{{description}}</P>
+                                                <h4 class="name"><span>{{name}}</span></h4>
+                                                <p class="description">{{description}}</P>
                                             </a>
                                         </h4>
                                     </div>
@@ -92,20 +94,20 @@
                                                         <a class="collapsed" role="button" data-toggle="collapse"
                                                            data-parent="#collapseOne-{{id}}" href="#collapseTwo-{{id}}"
                                                            aria-expanded="false" aria-controls="collapseSOne">
-                                                            <span>{{modelsLwm2m}}</span>
+                                                                <span>{{modelsLwm2m}}</span>
                                                         </a>
                                                     </h4>
                                                 </div>
 
                                                 <!-- more content of the data model -->
                                                 <div id="collapseTwo-{{id}}" class="panel-collapse collapse " role="tabpane1"
-                                                     aria-labelledby="headingtSOne">
+                                                     aria-labelledby="headingSOne">
                                                     <div class="panel-body">
 
                                                         <!-- description of data model -->
                                                         <div class="body-content">
                                                             <div class="panel-headings headingSOne gt-template" role="tab"  >
-                                                                <h4 class="panel-titles" style="word-break:break;">
+                                                                <h4 class="panel-titles">
                                                                     <a class="collapsed" role="button"
                                                                        data-toggle="collapse"
                                                                        data-parent="#collapseTwo-{{id}}" href="#collapseThree-{{id}}"
@@ -121,8 +123,8 @@
                                                                 <div class="panel-body">
                                                                     <!-- description of data model -->
                                                                     <div class="body-content">
-                                                                        <div class="panel-headingsb headingsone" role="tab">
-                                                                            <h4 class="panel-titlesb">
+                                                                        <div class="panel-headings headingsone" role="tab">
+                                                                            <h4 class="panel-titles">
                                                                                 <a class="collapsed" role="button"
                                                                                    data-toggle="collapse"
                                                                                    data-parent="#collapseTwo-{{id}}"
@@ -145,9 +147,9 @@
                                                                     </div>
 
                                                                     <div class="body-content">
-                                                                        <div class="panel-headingsb" role="tab"
+                                                                        <div class="panel-headings" role="tab"
                                                                              id="headingstwo">
-                                                                            <h4 class="panel-titlesb" style="word-break:break;">
+                                                                            <h4 class="panel-titles">
                                                                                 <a class="collapsed" role="button"
                                                                                    data-toggle="collapse"
                                                                                    data-parent="#collapseTwo-{{id}}"
@@ -170,9 +172,9 @@
                                                                     </div>
 
                                                                     <div id="exampleusPanel{{id}}" class="body-content">
-                                                                        <div class="panel-headingsb" role="tab"
+                                                                        <div class="panel-headings" role="tab"
                                                                              id="headingsthree">
-                                                                            <h4 class="panel-titlesb" style="word-break:break;">
+                                                                            <h4 class="panel-titles">
                                                                                 <a class="collapsed" role="button"
                                                                                    data-toggle="collapse"
                                                                                    data-parent="#collapseTwo-{{id}}"
@@ -196,18 +198,18 @@
 
 
                                                                     <div class="body-content">
-                                                                        <div class="panel-headingsb" role="tab"
+                                                                        <div class="panel-headings" role="tab"
                                                                              id="headingstfour">
-                                                                            <h4 class="panel-titlesb">
+                                                                            <h4 class="panel-titles">
                                                                                 <a class="collapsed" role="button"
                                                                                    data-toggle="collapse"
                                                                                    data-parent="#collapseTwo-{{id}}"
                                                                                    href="#collapseSeve-{{id}}"
                                                                                    aria-expanded="false"
                                                                                    aria-controls="collapsessfour">
-                                                                                    XML
+                                                                                    xml
                                                                                 </a>
-                                                                                <button type="button" class="btn btn-xs" style="float: right; margin-top: -33px; font-weight: bold; font-size:11px;" onclick="downLoadXML('_xml{{id}}')">downLoad</button>
+                                                                                <button type="button" class="btn btn-primary" style="float: right; margin-top: -38px;" onclick="downLoadXML('_xml{{id}}')">downLoad</button>
                                                                             </h4>
 
                                                                         </div>
@@ -225,19 +227,18 @@
                                                                     </div>
 
                                                                     <div id="jsonPanel{{id}}" class="body-content">
-                                                                        <div class="panel-headingsb" role="tab"
+                                                                        <div class="panel-headings" role="tab"
                                                                              id="headingsfive">
-                                                                            <h4 class="panel-titlesb">
+                                                                            <h4 class="panel-titles">
                                                                                 <a class="collapsed" role="button"
                                                                                    data-toggle="collapse"
                                                                                    data-parent="#collapseTwo-{{id}}"
                                                                                    href="#collapseEight-{{id}}"
                                                                                    aria-expanded="false"
                                                                                    aria-controls="collapsessfive">
-                                                                                    JSON
+                                                                                    json
                                                                                 </a>
-                                                                           <button type="button" class="btn btn-xs" style="float: right; margin-top: -33px; font-weight: bold; font-size:11px;" onclick="downLoadXML('json{{id}}')">downLoad</button>
-                                                                            
+                                                                                <button type="button" class="btn btn-primary" style="float: right; margin-top: -38px;" onclick="downLoadXML('json{{id}}')">downLoad</button>
                                                                             </h4>
                                                                         </div>
                                                                         <div id="collapseEight-{{id}}"
@@ -252,16 +253,16 @@
 
 
                                                                     <div id="codePanel{{id}}" class="body-content">
-                                                                        <div class="panel-headingsb" role="tab"
+                                                                        <div class="panel-headings" role="tab"
                                                                              id="headingssix">
-                                                                            <h4 class="panel-titlesb">
+                                                                            <h4 class="panel-titles">
                                                                                 <a class="collapsed" role="button"
                                                                                    data-toggle="collapse"
                                                                                    data-parent="#collapseTwo-{{id}}"
                                                                                    href="#collapseNigth-{{id}}"
                                                                                    aria-expanded="false"
                                                                                    aria-controls="collapsesssix">
-                                                                                    Code
+                                                                                    code
                                                                                 </a>
                                                                             </h4>
                                                                         </div>
@@ -270,7 +271,7 @@
                                                                              role="tabpanel"
                                                                              aria-labelledby="headingtstsix">
                                                                             <div class="panel-bodys gt-template"
-                                                                                 style="word-break:break; color: #009FCC; font-weight: bold; font-size: 14px;">
+                                                                                 style="word-break:break-all;">
                                                                                 <span><a href="https://github.com/T4ACTIVE/T4ACTIVE.github.io/blob/master{{codeUrl}}" target="_blank">{{codeName}}</a></span><br/>
                                                                                 <span><a href="https://github.com/T4ACTIVE/T4ACTIVE.github.io/blob/master{{codeUrlH}}" target="_blank">{{codeNameH}}</a></span>
                                                                             </div>
@@ -285,29 +286,100 @@
                                             </div>
                                             <div id="uci{{id}}" clas="body-content">
                                                 <!-- URN of the data model  UCI -->
-                                                <div  class="panel-headingU headingSOne gt-template" role="tab">
+                                                <div  class="panel-headingl headingSOneUci gt-template" role="tab">
                                                     <h4 class="panel-titlel">
                                                         <a class="collapsed" role="button" data-toggle="collapse"
                                                            data-parent="#collapseOne-{{id}}" href="#uciCollapse{{id}}"
-                                                           aria-expanded="false" aria-controls="collapseSOne">
+                                                           aria-expanded="false" aria-controls="collapseSOneUci">
                                                             <span>{{modelsUCI}}</span>
                                                         </a>
                                                     </h4>
                                                 </div>
-                                                <div id="uciCollapse{{id}}"
-                                                     class="panel-collapse collapse"
-                                                     role="tabpanel"
-                                                     aria-labelledby="headingtstsix">
-                                                    <div class="panel-bodys gt-template"
-                                                         style="word-break:break-all; color: #009FCC; font-weight: bold; font-size: 14px;">
-                                                        <span><a href="https://github.com/T4ACTIVE/T4ACTIVE.github.io/blob/master/{{UCI}}" target="_blank">{{UCIName}}</a></span>
+                                                <div id="uciCollapse{{id}}" class="panel-collapse collapse"
+                                                     role="tabpane1" aria-labelledby="headingSOneUci">
+                                                    <div class="panel-body">
+                                                        <!-- description of data model -->
+                                                        <div class="body-content">
+                                                            <div class="panel-headings" role="tab"
+                                                            id="headingtsoneuci">
+                                                                <h4 class="panel-titles">
+                                                                    <a class="collapsed" role="button"
+                                                                       data-toggle="collapse"
+                                                                       data-parent="#uciCollapse{{id}}"
+                                                                       href="#uciCollapseOne{{id}}"
+                                                                       aria-expanded="false"
+                                                                       aria-controls="headingtsoneuci">
+                                                                        URL
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="uciCollapseOne{{id}}"
+                                                                 class="panel-collapse collapse"
+                                                                 role="tabpanel"
+                                                                 aria-labelledby="headingtsoneuci">
+                                                                <div class="panel-bodys gt-template"
+                                                                     style="word-break:break-all;">
+                                                                    <span>{{uciChildOneValue}}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="body-content">
+                                                            <div class="panel-headings" role="tab"
+                                                            id="headingtstwouci">
+                                                                <h4 class="panel-titles">
+                                                                    <a class="collapsed" role="button"
+                                                                       data-toggle="collapse"
+                                                                       data-parent="#uciCollapse{{id}}"
+                                                                       href="#uciCollapseTwo{{id}}"
+                                                                       aria-expanded="false"
+                                                                       aria-controls="collapsesstwouci">
+                                                                        {{uciChildTwoKey}}
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="uciCollapseTwo{{id}}"
+                                                                 class="panel-collapse collapse"
+                                                                 role="tabpanel"
+                                                                 aria-labelledby="headingtstwouci">
+                                                                <div class="panel-bodys gt-template"
+                                                                     style="word-break:break-all;">
+                                                                    {{uciChildTwoValue}}
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div id="uciChildThreeKey{{id}}" class="body-content">
+                                                            <div class="panel-headings" role="tab"
+                                                                 id="collapsessthreeuci">
+                                                                <h4 class="panel-titles">
+                                                                    <a class="collapsed" role="button"
+                                                                       data-toggle="collapse"
+                                                                       data-parent="#uciCollapse{{id}}"
+                                                                       href="#uciCollapseThree{{id}}"
+                                                                       aria-expanded="false"
+                                                                       aria-controls="collapsessthreeuci">
+                                                                        {{uciChildThreeKey}}
+                                                                    </a>
+                                                                </h4>
+                                                            </div>
+                                                            <div id="uciCollapseThree{{id}}"
+                                                                 class="panel-collapse collapse"
+                                                                 role="tabpanel"
+                                                                 aria-labelledby="collapsessthreeuci">
+                                                                 <div class="panel-bodys gt-template"
+                                                                     style="word-break:break-all;">
+                                                                    <span>{{uciChildThreeValue}}</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- LWM2M MODEL end -->
+                                           
                                 </div>
                                 <!-- panels for data models end -->
                             </div>
@@ -333,8 +405,8 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/list.js"></script>
 <script src="js/list.page.js"></script>
-<script src="js/mainIn.js"></script>
-<script src="js/main.js"></script>
+<script src="jss/mainIn.js"></script>
+<script src="jss/main.js"></script>
 <script type="text/javascript">
     var modellist = new List('mlist', {
         valueNames: ['name', 'description'],
