@@ -320,7 +320,7 @@ var $gtMap = [[
                         var resourcesArray = [];
                         resourcesArray = json1.Resources.Item;
                         var tempBody = new Array(resourcesArray.length+2);
-                        tempBody[0] = '<table class="table-responsive table table-bordered table-hover"><tr><th>Resource</th><th>ID</th><th>Access Type</th><th>MultipleInstances</th><th>Mandatory</th><th>Type</th><th>RangeEnumeration</th><th>Units</th><th>Description</th></tr>';
+                        tempBody[0] = '<table class="table-responsive table table-bordered table-hover"><tr><th style="width: 14%;">Resource</th><th>ID</th><th>Access Type</th><th>MultipleInstances</th><th>Mandatory</th><th>Type</th><th>RangeEnumeration</th><th>Units</th><th>Description</th></tr>';
                         tempBody[resourcesArray.length+2] = '</table>';
                         for(var i = 0 ; i < resourcesArray.length; i++){
 
