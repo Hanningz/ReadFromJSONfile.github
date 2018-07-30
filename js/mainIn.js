@@ -263,14 +263,15 @@ var $gtMap = [[
                                 }
 
                                 
+                                // 判断当id=2时，取Wifi-iface的值
                                 if(dict.id === 2){
                                     json1["uciChildTwoKey"] = "Wifi-iface";
                                     var uciWifiIfaceDes = tempJson.UCI.WifiIface.Des;
-                                    var uciWifiIfaceDesOne = "Wifi-iface";
+                                    var uciWifiIfaceDesOne = "Option-fields";
                                     var uciWifiDes = [];
                                     uciWifiDes = tempJson.UCI.WifiIface.OptionFields;
                                     var tempBodyWifi = new Array(uciWifiDes.length+2);
-                                    tempBodyWifi[0] = '<table class="table-responsive table table-bordered table-hover" rules="all" style="border: 1px solid #adadad; font-size: 10px ; text-align-all: center;"><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
+                                    tempBodyWifi[0] = '<table rules="all" style="border: 1px solid #adadad; font-size: 10px ; text-align-all: center;"><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
                                     tempBodyWifi[uciWifiDes.length+2] = '</table>';
                                     for(var i = 0 ; i < uciWifiDes.length; i++){
 
@@ -279,7 +280,7 @@ var $gtMap = [[
                                         tempBodyWifi[i+1] = tempTR;
                                     }
 
-                                    var uciWifitem = uciWifiIfaceDes + "<br><span style='margin-top: 16px; margin-bottom: 10px; font-weight: bold; font-size: 14px; color: #009FCC;'>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
+                                    var uciWifitem = uciWifiIfaceDes + "<br><span style='font-weight: bold; color: blue;'>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
                                     json1["uciChildTwoValue"] = uciWifitem;
 
                                     var threeKeyUci = "uciChildThreeKey" + dict.id;
