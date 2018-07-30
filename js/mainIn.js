@@ -279,7 +279,7 @@ var $gtMap = [[
                                         tempBodyWifi[i+1] = tempTR;
                                     }
 
-                                    var uciWifitem = uciWifiIfaceDes + "<br><span style='font-weight: bold; color: blue;'>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
+                                    var uciWifitem = uciWifiIfaceDes + "<br><span style='margin-top: 16px; margin-bottom: 10px; font-weight: bold; font-size: 16px; color: #009FCC;'>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
                                     json1["uciChildTwoValue"] = uciWifitem;
 
                                     var threeKeyUci = "uciChildThreeKey" + dict.id;
@@ -318,8 +318,8 @@ var $gtMap = [[
                         var resourcesArray = [];
                         resourcesArray = json1.Resources.Item;
                         var tempBody = new Array(resourcesArray.length+2);
-                        tempBody[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover"><tr><th style="width: 15%;">Resource</th><th>ID</th><th>Access Type</th><th style="width: 16%;">MultipleInstances</th><th>Mandatory</th><th>Type</th><th>RangeEnumeration</th><th style="width: 10%;">Units</th><th>Description</th></tr>';
-                        tempBody[resourcesArray.length+2] = '</table></div>';
+                        tempBody[0] = '<table class="table table-bordered table-hover"><tr><th style="width: 15%;">Resource</th><th>ID</th><th>Access Type</th><th style="width: 16%;">MultipleInstances</th><th>Mandatory</th><th style="width: 8%;">Type</th><th>RangeEnumeration</th><th style="width: 10%;">Units</th><th>Description</th></tr>';
+                        tempBody[resourcesArray.length+2] = '</table>';
 
                         for(var i = 0 ; i < resourcesArray.length; i++){
 
