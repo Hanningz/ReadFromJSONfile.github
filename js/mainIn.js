@@ -225,7 +225,7 @@ var $gtMap = [[
                                         tempBody[i+1] = tempTR;
                                     }
 
-                                    var uciSystem = uciSystemDes + "<br><span style='margin-top: 20px; margin-bottom: 20px; font-weight: bold; font-size: 16px; color: #009FCC;'>" + uciSystemDesOne + "</span><br><br>" +  tempBody.join('');
+                                    var uciSystem = uciSystemDes + "<br><span style='margin-top: 20px; margin-bottom: 20px; font-weight: bold; font-size: 14px; color: #009FCC;'>" + uciSystemDesOne + "</span><br><br>" +  tempBody.join('');
                                     json1["uciChildTwoValue"] = uciSystem;
 
                                     // Timeserver
@@ -257,7 +257,7 @@ var $gtMap = [[
                                         tempBodyuciTSTwo[i+1] = tempTR;
                                     }
 
-                                    var uciTimeServer = uciTimeServerDes + "<br><span style='margin-top: 20px; margin-bottom: 20px; font-size: 16px; font-weight: bold; color: #009FCC;'>" + uciTimeServerOne + "</span><br><br>" +  tempBodyuciTSOne.join('') + "<br><br><span style='font-weight: bold; color: blue;'>" + uciTimeServerTwo + "</span><br><br>" + tempBodyuciTSTwo.join('') ;
+                                    var uciTimeServer = uciTimeServerDes + "<br><span style='margin-top: 20px; margin-bottom: 20px; font-size: 14px; font-weight: bold; color: #009FCC;'>" + uciTimeServerOne + "</span><br><br>" +  tempBodyuciTSOne.join('') + "<br><br><span style='font-weight: bold; color: blue;'>" + uciTimeServerTwo + "</span><br><br>" + tempBodyuciTSTwo.join('') ;
                                     json1["uciChildThreeValue"] = uciTimeServer;
 
                                 }
@@ -279,7 +279,7 @@ var $gtMap = [[
                                         tempBodyWifi[i+1] = tempTR;
                                     }
 
-                                    var uciWifitem = uciWifiIfaceDes + "<br><span style='margin-top: 16px; margin-bottom: 10px; font-weight: bold; font-size: 16px; color: #009FCC;'>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
+                                    var uciWifitem = uciWifiIfaceDes + "<br><span style='margin-top: 16px; margin-bottom: 10px; font-weight: bold; font-size: 14px; color: #009FCC;'>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
                                     json1["uciChildTwoValue"] = uciWifitem;
 
                                     var threeKeyUci = "uciChildThreeKey" + dict.id;
