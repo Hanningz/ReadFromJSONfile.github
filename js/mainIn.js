@@ -30,11 +30,6 @@ var $gtMap = [[
             $services: $services
         };
 
-        /* ================================================================
-         *  defineUtils                     // 返回工具项关，本模块只放无可以单独执行的函数，不放类
-         *      arrayToDictionary               // 将键值对数组转换为作为字典使用的对象
-         *      pairOfArraysToDictionary        // 将一对数组转换为作为字典使用的对象，第一个数组的元素作为键，第二个数组的元素作为值
-         * ================================================================ */
         function defineUtils() {
             Object.defineProperty(Array.prototype, "justFindOne", {
                 value: findElementBy,
@@ -325,7 +320,7 @@ var $gtMap = [[
                         var resourcesArray = [];
                         resourcesArray = json1.Resources.Item;
                         var tempBody = new Array(resourcesArray.length+2);
-                        tempBody[0] = '<table class="table-responsive table table-bordered table-hover"><tr><th style="width: 12%;">Resource</th><th style="width: 8%;">ID</th><th style="width: 8%;">Access Type</th><th style="width: 11%;">MultipleInstances</th><th style="width: 12%;">Mandatory</th><th style="width: 8%;">Type</th><th style="width: 12%;">RangeEnumeration</th><th style="width: 12%;">Units</th><th style="width: 36%;">Description</th></tr>';
+                        tempBody[0] = '<table class="table-responsive table table-bordered table-hover"><tr><th style="width: 12%;">Resource</th><th style="width: 12%;">ID</th><th style="width: 8%;">Access Type</th><th style="width: 12%;">MultipleInstances</th><th style="width: 12%;">Mandatory</th><th style="width: 8%;">Type</th><th style="width: 14%;">RangeEnumeration</th><th style="width: 12%;">Units</th><th style="width: 38%;">Description</th></tr>';
                         tempBody[resourcesArray.length+2] = '</table>';
                         for(var i = 0 ; i < resourcesArray.length; i++){
 
