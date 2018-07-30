@@ -6,8 +6,6 @@ var $debugging = $debugging ? $debugging : {};
 
 
 var xmlhttp;
-// 0：表示ifjson值是否存在 1：表示exampleus是否存在 2：表示codeUrl是否存在 3表示LMWM2卡片是否存在
-// 4:表示UCI卡片是否存在 5：表示UCI卡片中当id=2是第三个模板应该隐藏
 var isExist = new Array(6);
 var IdExist = new Array(6);
 
@@ -203,13 +201,13 @@ var $gtMap = [[
                             if(!!uciJson){
                                 var tempJson = loadJson(result + uciJson);
 
-                                // 判断url是否存在
+                               
                                 var uciUrl = tempJson.UCI.URL;
                                 if(!!uciUrl){
                                     json1["uciChildOneValue"] = uciUrl;
                                 }
 
-                                // 判断当id=1时，取System和Timeserver的值
+                               
                                 if(dict.id === 1){
 
                                     json1["uciChildTwoKey"] = "System";
@@ -264,7 +262,7 @@ var $gtMap = [[
 
                                 }
 
-                                // 判断当id=2时，取Wifi-iface的值
+                                
                                 if(dict.id === 2){
                                     json1["uciChildTwoKey"] = "Wifi-iface";
                                     var uciWifiIfaceDes = tempJson.UCI.WifiIface.Des;
@@ -320,7 +318,7 @@ var $gtMap = [[
                         var resourcesArray = [];
                         resourcesArray = json1.Resources.Item;
                         var tempBody = new Array(resourcesArray.length+2);
-                        tempBody[0] = '<table class="table-responsive table table-bordered table-hover"><tr><th style="width: 14%;">Resource</th><th>ID</th><th>Access Type</th><th>MultipleInstances</th><th>Mandatory</th><th>Type</th><th>RangeEnumeration</th><th>Units</th><th>Description</th></tr>';
+                        tempBody[0] = '<table class="table-responsive table table-bordered table-hover"><tr><th style="width: 15%;">Resource</th><th>ID</th><th>Access Type</th><th style="width: 16%;">MultipleInstances</th><th>Mandatory</th><th>Type</th><th>RangeEnumeration</th><th style="width: 10%;">Units</th><th>Description</th></tr>';
                         tempBody[resourcesArray.length+2] = '</table>';
                         for(var i = 0 ; i < resourcesArray.length; i++){
 
@@ -333,7 +331,7 @@ var $gtMap = [[
 
                         $(interpreter.interpret(templateString, json1)).insertBefore(template);
 
-                        // 判断模板中值是否为空，为空则隐藏div
+                        
                         for(var j = 0; j < isExist.length; j++){
                             if(!isExist[j]){
                                 document.getElementById(IdExist[j]).style.display = "none";
