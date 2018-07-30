@@ -196,18 +196,18 @@ var $gtMap = [[
                         IdExist[5] = dict.id;
                         if(isExist[4]){
 
-                            // 判断UCIJson是否存在
+                            
                             var uciJson = dict.UCIJson;
                             if(!!uciJson){
                                 var tempJson = loadJson(result + uciJson);
 
-                                // 判断url是否存在
+                              
                                 var uciUrl = tempJson.UCI.URL;
                                 if(!!uciUrl){
                                     json1["uciChildOneValue"] = uciUrl;
                                 }
 
-                                // 判断当id=1时，取System和Timeserver的值
+                               
                                 if(dict.id === 1){
 
                                     json1["uciChildTwoKey"] = "System";
@@ -257,12 +257,12 @@ var $gtMap = [[
                                         tempBodyuciTSTwo[i+1] = tempTR;
                                     }
 
-                                    var uciTimeServer = uciTimeServerDes + "<br><span style='margin-top: 100px; font-weight: bold; font-size: 14px; color: #009FCC;'>" + uciTimeServerOne + "</span><br><br>" +  tempBodyuciTSOne.join('') + "<br><br><span style='font-weight: bold; color: blue;'>" + uciTimeServerTwo + "</span><br><br>" + tempBodyuciTSTwo.join('') ;
+                                    var uciTimeServer = uciTimeServerDes + "<br><div style='margin-top: 100px; font-weight: bold; font-size: 14px; color: #009FCC;'><div>" + uciTimeServerOne + "</span><br><br>" +  tempBodyuciTSOne.join('') + "<br><br><span style='margin-top: 100px; font-weight: bold; font-size: 14px; font-weight: bold; color: #009FCC;'>" + uciTimeServerTwo + "</span><br><br>" + tempBodyuciTSTwo.join('') ;
                                     json1["uciChildThreeValue"] = uciTimeServer;
 
                                 }
 
-                                // 判断当id=2时，取Wifi-iface的值
+                                
                                 if(dict.id === 2){
                                     json1["uciChildTwoKey"] = "Wifi-iface";
                                     var uciWifiIfaceDes = tempJson.UCI.WifiIface.Des;
