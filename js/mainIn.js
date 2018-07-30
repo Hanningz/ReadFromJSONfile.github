@@ -1,6 +1,6 @@
 ;
 /* ================================================================
- *  浏览器调试用
+ *  for debugging
  * ================================================================ */
 var $debugging = $debugging ? $debugging : {};
 
@@ -48,12 +48,6 @@ var $gtMap = [[
                 pairOfArraysToDictionary: pairOfArraysToDictionary
             };
 
-            /* ================================================================
-             *  pairOfArraysToDictionary        // 将一对数组转换为作为字典使用的对象，返回作为字典的对象
-             *      (array                          // 输入数组，数组元素为表示键值对的对象
-             *      ,keyName                        // 输入数组的元素中表示键的属性名称
-             *      ,valueName)                     // 返回的对象的作为值的属性名称
-             * ================================================================ */
             function arrayToDictionary(array, keyName, valueName) {
                 var dictionary = {};
                 for (var i = array.length; --i >= 0;) {
@@ -64,12 +58,6 @@ var $gtMap = [[
                 return dictionary;
             }
 
-            /* ================================================================
-             *  pairOfArraysToDictionary        // 将一对数组转换为作为字典使用的对象，返回作为字典的对象
-             *      (keys                           // 作为键的数组
-             *      ,keyName                        // 返回的对象的作为键的属性名称
-             *      ,valueName)                     // 返回的对象的作为值的属性名称
-             * ================================================================ */
             function pairOfArraysToDictionary(keys, values) {
                 var keyValuePairs = keys.map(function (key, i) {
                     return [key, values[i]];
@@ -77,12 +65,7 @@ var $gtMap = [[
                 return arrayToDictionary(keyValuePairs, 0, 1);
             }
 
-            /* ================================================================
-             *  findElementBy                   // 返回数组中符合 callback 执行为 true 的第一个元素
-             *      this                            // 被查找的数组
-             *      (callback,
-             *      array)
-             * ================================================================ */
+
             function findElementBy(callback, array) {
                 var thisArray = array === undefined ? this : array;
                 var ret = null;
@@ -98,29 +81,13 @@ var $gtMap = [[
             }
         }
 
-        /* ================================================================
-         *  defineOOP                       // 返回面向对象相关
-         *      createClassBuilder              // 返回用来定义类的 builder
-         *      createDecoratorBuilder          // 返回用来装饰对象的 builder
-         *      ExclusiveActivitiesObserver     // 充当观察者的类，被观察对象的激活状态具有排他性
-         * ================================================================ */
+
         function defineOOP() {
             var StringTemplateInterpreter = defineStringTemplateInterpreter();
             return {
                 StringTemplateInterpreter: StringTemplateInterpreter
             };
 
-            /* ================================================================
-             *  defineStringTemplateInterpreter // 定义用来解释字符串模板解释器的类
-             * ================================================================
-             *  defineStringTemplateInterpreter() // 用来解释字符串模板解释器的类
-             *    this.                           // 实例层面
-             *      leftTag                         // 被替换部分的左标签
-             *      rightTag                        // 被替换部分的右标签
-             *    prototype.                      // 原型层面，
-             *      interpret                       // 执行解释
-             *          (stringTemplate, keyValueMap)
-             * ================================================================ */
             function defineStringTemplateInterpreter() {
                 StringTemplateInterpreter.prototype.interpret = interpret;
                 return StringTemplateInterpreter;
@@ -147,11 +114,6 @@ var $gtMap = [[
             }
         }
 
-
-        /* ================================================================
-         *  defineUI                        // 返回界面相关，本模块只放无可以单独执行的函数，不放类
-         *      populateHtmlFrom                // 填充自定义 HTML 模板（常见的模板标志是 .gt-template）
-         * ================================================================ */
         function defineUI() {
 
             return {
@@ -166,7 +128,7 @@ var $gtMap = [[
                     var templateString = template.outerHTML;
                     dictionaries.forEach(function (dict) {
 
-                        // 判断models里面有几个值
+                        
                         var modelsTemp = dict.models;
                         if(!modelsTemp || modelsTemp.length === 0){
                             isExist[3] = false;
@@ -203,20 +165,20 @@ var $gtMap = [[
 
                         }
 
-                        // 获取项目路径名
+                        
                         var pathName = document.location.pathname;
                         var indexLast = pathName.lastIndexOf('/');
                         var result = pathName.substr(0,indexLast+1);
 
-                        // 加载xml文件
+                       
                         var xmlDoc = loadXML(result + dict.url);
                         var xotree = new XML.ObjTree();
                         var xmlToJson = xotree.parseXML(xmlDoc);
 
-                        // 把dict和xmljson合并成一个json
+                        
                         var json1 = $.extend(dict, xmlToJson.LWM2M.Object);
 
-                        // 生成一个xml的json对象，便于插入页面中
+                        
                         var xmlDoc2 = xmlDoc.replace(new RegExp("<","gmi"), "&lt;").replace(new RegExp(">","gmi"), '&gt;\n').replace(new RegExp('"',"gmi"),'&quot;').replace(new RegExp(/\n/g,"gmi"),'<br/>');
                         json1["interXML"] = xmlDoc2;
 
@@ -230,18 +192,18 @@ var $gtMap = [[
                             isExist[0] = true;
                             IdExist[0] = dict.id;
                         }else{
-                            // json文件不存在
+                            
                             isExist[0] = false;
                             IdExist[0] = "jsonPanel" + dict.id;
                         }
 
-                        // 只有当有UCI的时候才会进行这个逻辑 2018-07-29新增
-                        // 初始化为false，默认不需要隐藏
+                        // only for reading data from UCI json file
+                       
                         isExist[5] = true;
                         IdExist[5] = dict.id;
                         if(isExist[4]){
 
-                            // 判断UCIJson是否存在
+                            // if json file exists
                             var uciJson = dict.UCIJson;
                             if(!!uciJson){
                                 var tempJson = loadJson(result + uciJson);
@@ -339,7 +301,7 @@ var $gtMap = [[
                         }
 
 
-                        // exampleus判断是否存在
+                        // if exampleus exists 
                         var exampleus = dict.exampleus;
                         if(!exampleus){
                             isExist[1] = false;
@@ -349,7 +311,7 @@ var $gtMap = [[
                             IdExist[1] = dict.id;
                         }
 
-                        // codeUrl判断是否存在
+                        // if codeurl exists
                         var codeUrl = dict.codeUrl;
                         if(!codeUrl){
                             isExist[2] = false;
@@ -390,7 +352,7 @@ var $gtMap = [[
                 template$.remove();
             }
 
-            //ajax方式读取xml
+            //ajax read xml
             function loadXML(fileName) {
 
                 if (window.XMLHttpRequest)
@@ -407,7 +369,7 @@ var $gtMap = [[
 
             }
 
-            // ajax方法读取json
+            // ajax read json
             function loadJson(jsonUrl) {
                 var json = null;
                 try {
@@ -425,10 +387,6 @@ var $gtMap = [[
 
         }
 
-        /* ================================================================
-         *  defineServices                    // 返回服务相关
-         *      getJsonOf                       // 根据 URL 获取 JSON
-         * ================================================================ */
         function defineServices() {
             return {
                 getJsonOf : getJsonOf
