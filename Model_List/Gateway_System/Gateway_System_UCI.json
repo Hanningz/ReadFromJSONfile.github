@@ -5,18 +5,18 @@
         "Des": "The system section contains settings that apply to the most basic operation of the system.",
 		"OptionFields": [
 		  {
-            "Name": "hostname",
-            "Type": "String",
-			"Required": "no",
-			"Default": "OpenWrt",
-            "Description": "The hostname for this system. Avoid points, even if they are within single or double quotes. For example 'my.hostname' will show only the 'my' part."
+            	    "Name": "hostname",
+            	    "Type": "String",
+		    "Required": "no",
+		    "Default": "OpenWrt",
+            	    "Description": "The hostname for this system. Avoid points, even if they are within single or double quotes. For example 'my.hostname' will show only the 'my' part."
           },
 		  {
-            "Name": "timezone",
-            "Type": "String",
-			"Required": "no",
-			"Default": "UTC",
-            "Description": "The time zone that date and time should be rendered in by default."
+		    "Name": "timezone",
+		    "Type": "String",
+		    "Required": "no",
+		    "Default": "UTC",
+		    "Description": "The time zone that date and time should be rendered in by default."
           }
         ]
 	  },
@@ -25,19 +25,19 @@
         "Des": "The timeserver section contains a list of NTP serv ers for the system to use.",
 		"ListFields":
 		  [{
-            "Name": "server",
-            "Type": "list of hostnames",
-            "Required": "no",
-            "Default": "none",
-            "Description": "Defines the pool of NTP servers to poll the time from. If the list is empty, the builtin NTP daemon is not started."
+		    "Name": "server",
+		    "Type": "list of hostnames",
+		    "Required": "no",
+		    "Default": "none",
+		    "Description": "Defines the pool of NTP servers to poll the time from. If the list is empty, the builtin NTP daemon is not started."
           }],
 		"OptionFields":
 		  [{
-            "Name": "enable_server",
-            "Type": "boolean",
-            "Required": "no",
-            "Default": "0",
-            "Description": "You can put busybox-ntpd in client mode only: by defining at least one host to server and puting enable_server 0 client & server mode: by putting enable_server to 1, (busybox-ntpd listens to UDP 123 by default), server mode only: by not defining any servers in the config and just put enable_server 1 (ntpd will answer with the time of the router)"
+		    "Name": "enable_server",
+		    "Type": "boolean",
+		    "Required": "no",
+		    "Default": "0",
+		    "Description": "You can put busybox-ntpd in client mode only: by defining at least one host to server and puting enable_server 0 client & server mode: by putting enable_server to 1, (busybox-ntpd listens to UDP 123 by default), server mode only: by not defining any servers in the config and just put enable_server 1 (ntpd will answer with the time of the router)"
           }]
 	   	} 
   }
