@@ -279,7 +279,7 @@ var $gtMap = [[
                                         tempBodyWifi[i+1] = tempTR;
                                     }
 
-                                    var uciWifitem = uciWifiIfaceDes + "<br><div style='margin-top: 20px; font-weight: bold; font-size: 14px; color: #009FCC;'><div>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
+                                    var uciWifitem = uciWifiIfaceDes + "<br><div style='margin-top: 20px; font-weight: bold; font-size: 14px;'><div>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
                                     json1["uciChildTwoValue"] = uciWifitem;
 
                                     var threeKeyUci = "uciChildThreeKey" + dict.id;
