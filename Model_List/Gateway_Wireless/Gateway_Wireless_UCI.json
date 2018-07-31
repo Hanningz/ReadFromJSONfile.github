@@ -8,7 +8,7 @@
             		"Name": "device",
             		"Type": "String",
 			"Required": "yes",
-			"Default": "(first device id)",
+			"Default": "first device id",
             		"Description": "Specifies the used wireless adapter."
           },
 		  {
@@ -36,7 +36,7 @@
            		"Name": "macaddr",
             		"Type": "MAC address",
 			"Required": "no",
-			"Default": "(hostapd/driver default)",
+			"Default": "hostapd/driver default",
             		"Description": "Overrides the MAC address used for the wifi interface."
           },
 		  {
