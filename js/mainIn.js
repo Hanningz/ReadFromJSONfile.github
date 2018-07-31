@@ -225,7 +225,7 @@ var $gtMap = [[
                                         tempBody[i+1] = tempTR;
                                     }
 
-                                    var uciSystem = uciSystemDes + "<br><div style='margin-top: 100px; font-weight: bold; font-size: 14px; color: #009FCC;'></div>" + uciSystemDesOne + "</span><br><br>" +  tempBody.join('');
+                                    var uciSystem = uciSystemDes + "<br><div style='margin-top: 20px; font-weight: bold; font-size: 14px; color: #009FCC;'></div>" + uciSystemDesOne + "</span><br><br>" +  tempBody.join('');
                                     json1["uciChildTwoValue"] = uciSystem;
 
                                     // Timeserver
@@ -248,7 +248,7 @@ var $gtMap = [[
                                     var uciTSTwo =[];
                                     uciTSTwo = tempJson.UCI.Timeserver.OptionFields;
                                     var tempBodyuciTSTwo = new Array(uciTSTwo.length+2);
-                                    tempBodyuciTSTwo[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
+                                    tempBodyuciTSTwo[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><tr><th style="width: 4%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
                                     tempBodyuciTSTwo[uciTSTwo.length+2] = '</table></div>';
                                     for(var i = 0 ; i < uciTSTwo.length; i++){
 
@@ -257,7 +257,7 @@ var $gtMap = [[
                                         tempBodyuciTSTwo[i+1] = tempTR;
                                     }
 
-                                    var uciTimeServer = uciTimeServerDes + "<br><div style='margin-top: 30px; font-weight: bold; font-size: 14px; color: #009FCC;'><div>" + uciTimeServerOne + "</span><br><br>" +  tempBodyuciTSOne.join('') + "<br><br><span style='margin-top: 100px; font-weight: bold; font-size: 14px; font-weight: bold; color: #009FCC;'>" + uciTimeServerTwo + "</span><br><br>" + tempBodyuciTSTwo.join('') ;
+                                    var uciTimeServer = uciTimeServerDes + "<br><div style='margin-top: 20px; font-weight: bold; font-size: 14px; color: #009FCC;'><div>" + uciTimeServerOne + "</span><br><br>" +  tempBodyuciTSOne.join('') + "<br><br><div style='margin-top: 20px; font-weight: bold; font-size: 14px; font-weight: bold; color: #009FCC;'></div>" + uciTimeServerTwo + "</span><br><br>" + tempBodyuciTSTwo.join('') ;
                                     json1["uciChildThreeValue"] = uciTimeServer;
 
                                 }
@@ -279,7 +279,7 @@ var $gtMap = [[
                                         tempBodyWifi[i+1] = tempTR;
                                     }
 
-                                    var uciWifitem = uciWifiIfaceDes + "<br><div style='margin-top: 30px; font-weight: bold; font-size: 14px; color: #009FCC;'><div>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
+                                    var uciWifitem = uciWifiIfaceDes + "<br><div style='margin-top: 20px; font-weight: bold; font-size: 14px; color: #009FCC;'><div>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
                                     json1["uciChildTwoValue"] = uciWifitem;
 
                                     var threeKeyUci = "uciChildThreeKey" + dict.id;
