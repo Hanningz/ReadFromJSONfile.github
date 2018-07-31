@@ -193,8 +193,8 @@ var $gtMap = [[
                         // only for reading data from UCI json file
                        
                          isExist[5] = true;
-                        IdExist[5] = dict.id;
-                        if(isExist[4]){
+                         IdExist[5] = dict.id;
+                         if(isExist[4]){
 
                             
                             var uciJson = dict.UCIJson;
@@ -225,7 +225,7 @@ var $gtMap = [[
                                         tempBody[i+1] = tempTR;
                                     }
 
-                                    var uciSystem = uciSystemDes + "<br><span style='margin-top: 100px; font-weight: bold; font-size: 14px; color: #009FCC;'>" + uciSystemDesOne + "</span><br><br>" +  tempBody.join('');
+                                    var uciSystem = uciSystemDes + "<br><div style='margin-top: 100px; font-weight: bold; font-size: 14px; color: #009FCC;'></div>" + uciSystemDesOne + "</span><br><br>" +  tempBody.join('');
                                     json1["uciChildTwoValue"] = uciSystem;
 
                                     // Timeserver
@@ -257,7 +257,7 @@ var $gtMap = [[
                                         tempBodyuciTSTwo[i+1] = tempTR;
                                     }
 
-                                    var uciTimeServer = uciTimeServerDes + "<br><div style='margin-top: 100px; font-weight: bold; font-size: 14px; color: #009FCC;'><div>" + uciTimeServerOne + "</span><br><br>" +  tempBodyuciTSOne.join('') + "<br><br><span style='margin-top: 100px; font-weight: bold; font-size: 14px; font-weight: bold; color: #009FCC;'>" + uciTimeServerTwo + "</span><br><br>" + tempBodyuciTSTwo.join('') ;
+                                    var uciTimeServer = uciTimeServerDes + "<br><div style='margin-top: 30px; font-weight: bold; font-size: 14px; color: #009FCC;'><div>" + uciTimeServerOne + "</span><br><br>" +  tempBodyuciTSOne.join('') + "<br><br><span style='margin-top: 100px; font-weight: bold; font-size: 14px; font-weight: bold; color: #009FCC;'>" + uciTimeServerTwo + "</span><br><br>" + tempBodyuciTSTwo.join('') ;
                                     json1["uciChildThreeValue"] = uciTimeServer;
 
                                 }
@@ -279,7 +279,7 @@ var $gtMap = [[
                                         tempBodyWifi[i+1] = tempTR;
                                     }
 
-                                    var uciWifitem = uciWifiIfaceDes + "<br><span style='margin-top: 100px; font-weight: bold; font-size: 14px; color: #009FCC;'>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
+                                    var uciWifitem = uciWifiIfaceDes + "<br><div style='margin-top: 30px; font-weight: bold; font-size: 14px; color: #009FCC;'><div>" + uciWifiIfaceDesOne + "</span><br><br>" +  tempBodyWifi.join('');
                                     json1["uciChildTwoValue"] = uciWifitem;
 
                                     var threeKeyUci = "uciChildThreeKey" + dict.id;
@@ -319,7 +319,7 @@ var $gtMap = [[
                         var resourcesArray = [];
                         resourcesArray = json1.Resources.Item;
                         var tempBody = new Array(resourcesArray.length+2);
-                        tempBody[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover"><tr><th style="width: 14%;">Resource</th><th>ID</th><th>Access Type</th><th style="width: 16%;">MultipleInstances</th><th style="width: 14%;">Mandatory</th><th style="width: 8%;">Type</th><th>RangeEnumeration</th><th style="width: 10%;">Units</th><th>Description</th></tr>';
+                        tempBody[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover"><tr><th style="width: 13%;">Resource</th><th>ID</th><th>Access Type</th><th style="width: 14%;">MultipleInstances</th><th style="width: 14%;">Mandatory</th><th style="width: 8%;">Type</th><th>RangeEnumeration</th><th style="width: 10%;">Units</th><th>Description</th></tr>';
                         tempBody[resourcesArray.length+2] = '</table></div>';
 
                         for(var i = 0 ; i < resourcesArray.length; i++){
