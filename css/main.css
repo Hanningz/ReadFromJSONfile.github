@@ -770,6 +770,7 @@ th {
 td {
 
     font-size: 13px;
+    font-weight: bold;
 }
 
 tr:nth-of-type(odd) { 
