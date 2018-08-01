@@ -235,8 +235,8 @@ var $gtMap = [[
                                     var uciTSOne =[];
                                     uciTSOne = tempJson.UCI.Timeserver.ListFields;
                                     var tempBodyuciTSOne = new Array(uciTSOne.length+2);
-                                    tempBodyuciTSOne[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
-                                    tempBodyuciTSOne[uciTSOne.length+2] = '</table></div>';
+                                    tempBodyuciTSOne[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><thead><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr></thead></tbody>';
+                                    tempBodyuciTSOne[uciTSOne.length+2] = '</tbody></table></div>';
                                     for(var i = 0 ; i < uciTSOne.length; i++){
 
                                         var item = uciTSOne[i];
@@ -248,8 +248,8 @@ var $gtMap = [[
                                     var uciTSTwo =[];
                                     uciTSTwo = tempJson.UCI.Timeserver.OptionFields;
                                     var tempBodyuciTSTwo = new Array(uciTSTwo.length+2);
-                                    tempBodyuciTSTwo[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><tr><th style="width: 4%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
-                                    tempBodyuciTSTwo[uciTSTwo.length+2] = '</table></div>';
+                                    tempBodyuciTSTwo[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><thead><tr><th style="width: 4%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr></thead><tbody>';
+                                    tempBodyuciTSTwo[uciTSTwo.length+2] = '</tbody></table></div>';
                                     for(var i = 0 ; i < uciTSTwo.length; i++){
 
                                         var item = uciTSTwo[i];
@@ -257,7 +257,7 @@ var $gtMap = [[
                                         tempBodyuciTSTwo[i+1] = tempTR;
                                     }
 
-                                    var uciTimeServer = uciTimeServerDes + "<br><div style='margin-top: 20px; font-weight: bold; font-size: 14px;'>" + uciTimeServerOne + "</div><br>" +  tempBodyuciTSOne.join('') + "<div style='margin-top: 30px; font-size: 14px; font-weight: bold;'>" + uciTimeServerTwo + "<br></div>" + tempBodyuciTSTwo.join('') ;
+                                    var uciTimeServer = uciTimeServerDes + "<br><div style='margin-top: 20px; font-weight: bold; font-size: 14px;'>" + uciTimeServerOne + "</div><br>" +  tempBodyuciTSOne.join('') + "<br><br><div style='margin-top: 30px; font-size: 14px; font-weight: bold;'>" + uciTimeServerTwo + "<br><br></div>" + tempBodyuciTSTwo.join('') ;
                                     json1["uciChildThreeValue"] = uciTimeServer;
 
                                 }
@@ -270,12 +270,12 @@ var $gtMap = [[
                                     var uciWifiDes = [];
                                     uciWifiDes = tempJson.UCI.WifiIface.OptionFields;
                                     var tempBodyWifi = new Array(uciWifiDes.length+2);
-                                    tempBodyWifi[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><thead><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr></thead>';
-                                    tempBodyWifi[uciWifiDes.length+2] = '</table></div>';
+                                    tempBodyWifi[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><thead><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr></thead><tbody>';
+                                    tempBodyWifi[uciWifiDes.length+2] = '</tbody></table></div>';
                                     for(var i = 0 ; i < uciWifiDes.length; i++){
 
                                         var item = uciWifiDes[i];
-                                        var tempTR = "<tbody><tr><td>" + item.Name + "</td><td>" + item.Type + "</td><td>" + item.Required + "</td><td>" +item.Default  + "</td><td>" + item.Description + "</td></tr></tbody>" ;
+                                        var tempTR = "<tr><td>" + item.Name + "</td><td>" + item.Type + "</td><td>" + item.Required + "</td><td>" +item.Default  + "</td><td>" + item.Description + "</td></tr>" ;
                                         tempBodyWifi[i+1] = tempTR;
                                     }
 
@@ -320,12 +320,12 @@ var $gtMap = [[
                         resourcesArray = json1.Resources.Item;
                         var tempBody = new Array(resourcesArray.length+2);
                         tempBody[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover"><thead><tr><th style="width: 12%;">Resource</th><th>ID</th><th>Access Type</th><th style="width: 14%;">MultipleInstances</th><th style="width: 13%;">Mandatory</th><th style="width: 8%;">Type</th><th>RangeEnumeration</th><th style="width: 10%;">Units</th><th>Description</th></tr></thead><tbody>';
-                        tempBody[resourcesArray.length+2] = '</tbody></table></div>';
+                        tempBody[resourcesArray.length+2] = '<tbody></table></div>';
 
                         for(var i = 0 ; i < resourcesArray.length; i++){
 
                             var item = resourcesArray[i];
-                            var tempTR = "<tr><td>" + item.Name + "</td><td>" + i + "</td><td>" + item.Operations + "</td><td>" + item.MultipleInstances + "</td><td>" +item.Mandatory  + "</td><td>" + item.Type + "</td><td>" + item.RangeEnumeration + "</td><td>"+ item.Units + "</td><td>" + item.Description + "</td></tr>" ;
+                            var tempTR = "<tr><td>" + item.Name + "</td><td>" + i + "</td><td>" + item.Operations + "</td><td>" + item.MultipleInstances + "</td><td>" +item.Mandatory  + "</td><td>" + item.Type + "</td><td>" + item.RangeEnumeration + "</td><td>"+ item.Units + "</td><td>" + item.Description + "</td></tr></tbody>" ;
                             tempBody[i+1] = tempTR;
                         }
 
