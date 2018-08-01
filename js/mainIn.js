@@ -270,12 +270,12 @@ var $gtMap = [[
                                     var uciWifiDes = [];
                                     uciWifiDes = tempJson.UCI.WifiIface.OptionFields;
                                     var tempBodyWifi = new Array(uciWifiDes.length+2);
-                                    tempBodyWifi[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
+                                    tempBodyWifi[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><thead><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr></thead>';
                                     tempBodyWifi[uciWifiDes.length+2] = '</table></div>';
                                     for(var i = 0 ; i < uciWifiDes.length; i++){
 
                                         var item = uciWifiDes[i];
-                                        var tempTR = "<tr><td>" + item.Name + "</td><td>" + item.Type + "</td><td>" + item.Required + "</td><td>" +item.Default  + "</td><td>" + item.Description + "</td></tr>" ;
+                                        var tempTR = "<tbody><tr><td>" + item.Name + "</td><td>" + item.Type + "</td><td>" + item.Required + "</td><td>" +item.Default  + "</td><td>" + item.Description + "</td></tr></tbody>" ;
                                         tempBodyWifi[i+1] = tempTR;
                                     }
 
