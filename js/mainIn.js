@@ -257,7 +257,7 @@ var $gtMap = [[
                                         tempBodyuciTSTwo[i+1] = tempTR;
                                     }
 
-                                    var uciTimeServer = uciTimeServerDes + "<br><div style='margin-top: 20px; font-weight: bold; font-size: 14px;'>" + uciTimeServerOne + "</div><br>" +  tempBodyuciTSOne.join('') + "<br><div style='margin-top: 30px; font-size: 14px; font-weight: bold;'>" + uciTimeServerTwo + "<br></div>" + tempBodyuciTSTwo.join('') ;
+                                    var uciTimeServer = uciTimeServerDes + "<br><div style='margin-top: 20px; font-weight: bold; font-size: 14px;'>" + uciTimeServerOne + "</div><br>" +  tempBodyuciTSOne.join('') + "<div style='margin-top: 30px; font-size: 14px; font-weight: bold;'>" + uciTimeServerTwo + "</div>" + tempBodyuciTSTwo.join('') ;
                                     json1["uciChildThreeValue"] = uciTimeServer;
 
                                 }
