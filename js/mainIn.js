@@ -235,8 +235,8 @@ var $gtMap = [[
                                     var uciTSOne =[];
                                     uciTSOne = tempJson.UCI.Timeserver.ListFields;
                                     var tempBodyuciTSOne = new Array(uciTSOne.length+2);
-                                    tempBodyuciTSOne[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><thead><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr></thead></tbody>';
-                                    tempBodyuciTSOne[uciTSOne.length+2] = '</tbody></table></div>';
+                                    tempBodyuciTSOne[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
+                                    tempBodyuciTSOne[uciTSOne.length+2] = '</table></div>';
                                     for(var i = 0 ; i < uciTSOne.length; i++){
 
                                         var item = uciTSOne[i];
@@ -248,8 +248,8 @@ var $gtMap = [[
                                     var uciTSTwo =[];
                                     uciTSTwo = tempJson.UCI.Timeserver.OptionFields;
                                     var tempBodyuciTSTwo = new Array(uciTSTwo.length+2);
-                                    tempBodyuciTSTwo[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><thead><tr><th style="width: 4%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr></thead><tbody>';
-                                    tempBodyuciTSTwo[uciTSTwo.length+2] = '</tbody></table></div>';
+                                    tempBodyuciTSTwo[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><tr><th style="width: 4%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
+                                    tempBodyuciTSTwo[uciTSTwo.length+2] = '</table></div>';
                                     for(var i = 0 ; i < uciTSTwo.length; i++){
 
                                         var item = uciTSTwo[i];
@@ -271,8 +271,8 @@ var $gtMap = [[
                                     var uciWifiDes = [];
                                     uciWifiDes = tempJson.UCI.WifiIface.OptionFields;
                                     var tempBodyWifi = new Array(uciWifiDes.length+2);
-                                    tempBodyWifi[0] = '<div class ="table-responsivetable"><table class="table table-bordered table-hover" rules="all" style="text-align-all: center;"><thead><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr></thead><tbody>';
-                                    tempBodyWifi[uciWifiDes.length+2] = '</tbody></table></div>';
+                                    tempBodyWifi[0] = '<table class="table-responsivetable table-bordered table-hover" rules="all" style="text-align-all: center;"><thead><tr><th style="width: 2%;">Name</th><th style="width: 2%;">Type</th><th style="width: 2%;">Required</th><th style="width: 3%;">Default</th><th style="width: 10%;">Description</th></tr>';
+                                    tempBodyWifi[uciWifiDes.length+2] = '</table>';
                                     for(var i = 0 ; i < uciWifiDes.length; i++){
 
                                         var item = uciWifiDes[i];
