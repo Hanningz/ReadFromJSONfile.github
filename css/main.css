@@ -111,7 +111,7 @@ h5 {
 .btn-large.view {
 	background-color: #00CED1; 
 	margin-right: 8px;
-	color: #00CED1;
+	color: yellow;
 }
 
 /* ------------------------------------------------------------------------------
@@ -210,7 +210,7 @@ ul li {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-        color: #FFF;
+        color: green;
         padding: 10px 10px;
 }
 
