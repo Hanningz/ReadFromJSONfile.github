@@ -57,8 +57,7 @@ h5 {
 }
 
 .btn-large {
-	background-color: #3bc492;
-	
+	background-color: #3bc492;	
 }
 
 .btn-xs {
@@ -293,7 +292,7 @@ ul li {
 }
 
 .search {
-	width: 70%; 
+	width: 76%; 
 	float: left; 
 	margin-bottom: 30px; 
 	height:32px; 
