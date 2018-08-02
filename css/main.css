@@ -109,7 +109,7 @@ h5 {
 }
 
 .btn-large.view {
-	background-color: #00CED1; 
+	background-color: #009FCC; 
 	margin-right: 8px;
 	color: yellow;
 }
@@ -216,7 +216,7 @@ ul li {
 
 .navbar-inverse .navbar-nav > li > a:hover,  
 .navbar-inverse .navbar-nav > li > a:focus {  
-     	color: #00CED1;     
+     	color: #009FCC;     
 }  
 
 .navbar-inverse .navbar-toggle:hover,  
@@ -225,7 +225,7 @@ ul li {
 }  
 
 .navbar-inverse .navbar-nav > li .active { 
-	 background-color:#fff;	 
+	 background-color:#009FCC;	 
 } 
 
 
@@ -513,6 +513,7 @@ a:hover,a:focus{
 
 .accordion .panel:hover {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	color: #009FCC;
 
 
 
@@ -520,7 +521,7 @@ a:hover,a:focus{
 
 .accordion .panel-heading:hover {
     	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	color: green;
+	color: #009FCC;
 }
 
 .accordion .panel-headings:hover {
