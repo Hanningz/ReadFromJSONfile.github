@@ -193,7 +193,7 @@ ul li {
 
 .navbar-inverse {
     	border-color: transparent;
-	background-image: url(../images/banner.jpg);
+	background-image: url(banner.jpg);
 	background-position: center top;
 	background-repeat: no-repeat;
 	-moz-background-size: cover;
@@ -235,7 +235,7 @@ ul li {
 -------------------------------------------------------------------------------*/
 
 .banner {
-	background-image: url(../images/banner.jpg);
+	background-image: url(banner.jpg);
 	background-position: center top;
 	background-repeat: no-repeat;
 	-moz-background-size: cover;
@@ -246,7 +246,7 @@ ul li {
 }
 
 .banners {
-	background-image: url(../images/banner.jpg);
+	background-image: url(banner.jpg);
 	background-position: center top;
 	background-repeat: no-repeat;
 	-moz-background-size: cover;
