@@ -513,7 +513,6 @@ a:hover,a:focus{
 
 .accordion .panel:hover {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	color: #009FCC;
 
 
 
@@ -521,7 +520,7 @@ a:hover,a:focus{
 
 .accordion .panel-heading:hover {
     	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	color: #009FCC;
+	border-left: 6px solid #20B2AA;	
 }
 
 .accordion .panel-headings:hover {
